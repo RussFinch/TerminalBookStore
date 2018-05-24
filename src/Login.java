@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -6,28 +7,43 @@ public class Login {
 
 	public static String run() throws FileNotFoundException {
 		
+		String state = "loggedOut";
+		String fileScanUser = "";
+		String fileScanPass = "";
+		String inputUsername = "";
+		String inputPass = "";
+
+		
 		File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
-		Scanner fileScanner = new Scanner(inputFile);
+		Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
 	    Scanner keyboard = new Scanner(System.in);
 	    
-	    String scanUser = fileScanner.nextLine();
-	    String scanPass = fileScanner.nextLine(); 
+	    fileScanUser = fileScanner.nextLine();
+	    fileScanPass = fileScanner.nextLine(); 
 	    fileScanner.close();
 	    
+	    System.out.println("Please enter user credentials:");
 	    System.out.println("Username:");
-	    String inputUser = keyboard.nextLine();   //Error here when first login fails...
-	    System.out.println("Password:");
-	    String inputPass = keyboard.nextLine();
-	    keyboard.close();
 	    
-	    if (inputUser.equals(scanUser) && inputPass.equals(scanPass)) {
-	        System.out.print("Hello " + inputUser + "\n");
-	        String DbConSetupString = DbConManager.dbLogin(inputUser, inputPass);
-	        System.out.println(DbConSetupString);
-	        return "loggedIn";
-	    } else {
-	        System.out.print(inputUser + " your username or password is incorrect.\n");
-	        return "loggedOut";
-	    } 
+	    while (keyboard.hasNextLine()) {
+			inputUsername = keyboard.nextLine();
+			System.out.println("Password:");
+			inputPass = keyboard.nextLine();
+			break;
+	    	}
+		if (inputUsername.equals(fileScanUser) && inputPass.equals(fileScanPass)) {
+			System.out.print("\nHello " + inputUsername);
+			String DbConSetupString = DbConManager.dbLogin(inputUsername, inputPass);
+			System.out.println(DbConSetupString);
+			state = "loggedIn";
+			keyboard.close();
+			}
+		else {
+			System.out.print(inputUsername + " your username or password is incorrect.\n");
+			state = "loggedOut";
+			}
+	return state;
 	}
 }
+	
+

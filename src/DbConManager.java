@@ -10,18 +10,18 @@ public class DbConManager {
 		String DbUrlString = "jdbc:mysql://win81-desktop.home.local:3306/ebookstore?useSSL=FALSE";
 		System.out.println("\nDatabase Setup Commencing...");
 		try (
-				Connection conn = DriverManager.getConnection(DbUrlString, userName, password);
-				Statement stmt = conn.createStatement();
-				) {
+			Connection conn = DriverManager.getConnection(DbUrlString, userName, password);
+			Statement stmt = conn.createStatement();
+			) {
 			
 				// Create books table if not already existing
 				String sqlCreateTableBooks = "create table if not exists books "
 						+ "(ID int, Title varchar(50), Author varchar(50), QTY int, primary key (ID))";
 				int countCreation = stmt.executeUpdate(sqlCreateTableBooks);
-				System.out.println((countCreation + 1) + ": Database table verified in setup.");
-			
+				System.out.println("\n" + (countCreation + 1) + ": Database table verified in setup.");
+/*			
 				//Insert test data
-/*				String sqlInsertBooksData = "insert into books values "
+				String sqlInsertBooksData = "insert into books values "
 						+ "(3001, 'A Tale of Two Cities', 'Charles Dickens', 30), "
 						+ "(3002, 'Harry Potter and the Philosophers Stone', 'J.K. Rowling', 40), "
 						+ "(3003, 'The Lion the Witch and the Wardrobe', 'C.S. Lewis', 25), "
@@ -33,8 +33,7 @@ public class DbConManager {
 */			
 			} catch (SQLException ex) {
 				ex.printStackTrace();
-		}
-		
+				}
 		return "Database Setup complete.";
 	}
 }

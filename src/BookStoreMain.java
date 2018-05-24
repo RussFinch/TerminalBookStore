@@ -4,18 +4,18 @@ public class BookStoreMain {
 
 	public static void main(String args[]) throws FileNotFoundException {
 		
-		String userLogin = "loggedOut";
+		String userState = "loggedOut";
 		int loginTries = 0;
 		
-		for (loginTries=0; loginTries<=3; loginTries++) {
-			if (userLogin.equals("loggedOut")) {
-				userLogin = Login.run();
-			}
-			else if (userLogin.equals("loggedIn")) {
-				System.out.println("\nyou've logged in.");
+		for (loginTries=0; loginTries<=2; loginTries++) {
+			if (userState.equals("loggedOut")) {
+				userState = Login.run();
+				}
+			else if (userState.equals("loggedIn")) {
+				System.out.println("You've logged in");
 				UserInterface.mainPage();
 				break;
-			}
+				}
 		}
-	}
-}	
+	}	
+}
