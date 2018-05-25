@@ -14,11 +14,42 @@ public class DbConManager {
 			Statement stmt = conn.createStatement();
 			) {
 			
-				// Create books table if not already existing
-				String sqlCreateTableBooks = "create table if not exists books "
-						+ "(ID int, Title varchar(50), Author varchar(50), QTY int, primary key (ID))";
-				int countCreation = stmt.executeUpdate(sqlCreateTableBooks);
-				System.out.println("\n" + (countCreation + 1) + ": Database table verified in setup.");
+				// Create database tables if not already existing
+				
+				String sqlCreateTableBooks = "CREATE TABLE IF NOT EXISTS books "
+						+ "(id INT, title VARCHAR(50),"
+						+ " description VARCHAR(255),"
+						+ " genre VARCHAR(50),"
+						+ " price DECIMAL(4,2),"
+						+ " author_id VARCHAR(10),"
+						+ " publisher_id VARCHAR(10),"
+						+ " publish_date DATE,"
+						+ " edition TINYINT,"
+						+ " qty INT,"
+						+ " PRIMARY KEY (id));";
+				int countBooksCreation = stmt.executeUpdate(sqlCreateTableBooks);
+				System.out.println("\n" + (countBooksCreation + 1) + ": Books Database table verified in setup.");
+				
+				String sqlCreateTablePublishers = "CREATE TABLE IF NOT EXISTS publishers "
+						+ "(publisher_id VARCHAR(10),"
+						+ " publisher_name VARCHAR(50),"
+						+ " address_1 VARCHAR(20),"
+						+ " address_2 VARCHAR(20),"
+						+ " address_3 VARCHAR(20),"
+						+ " address_town VARCHAR(20),"
+						+ " address_county VARCHAR(20),"
+						+ " address_postcode VARCHAR(8),"
+						+ " PRIMARY KEY (publisher_id));";
+				int countPublishersCreation = stmt.executeUpdate(sqlCreateTablePublishers);
+				System.out.println("\n" + (countPublishersCreation + 1) + ": Publishers Database table verified in setup.");
+				
+				String sqlCreateTableAuthors = "CREATE TABLE IF NOT EXISTS authors "
+						+ "(author_id VARCHAR(10),"
+						+ " author_firstname VARCHAR(50),"
+						+ " author_surname VARCHAR(20),"
+						+ " PRIMARY KEY (author_id));";
+				int countAuthorsCreation = stmt.executeUpdate(sqlCreateTableAuthors);
+				System.out.println("\n" + (countAuthorsCreation + 1) + ": Publishers Database table verified in setup.");
 /*			
 				//Insert test data
 				String sqlInsertBooksData = "insert into books values "
