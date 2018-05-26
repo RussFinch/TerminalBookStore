@@ -1,9 +1,11 @@
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class BookStoreMain {
 
 	public static void main(String args[]) throws FileNotFoundException {
 		
+		//begin program with user login
 		String userState = "loggedOut";
 		int loginTries = 0;
 		
@@ -12,10 +14,12 @@ public class BookStoreMain {
 				userState = Login.run();
 				}
 			else if (userState.equals("loggedIn")) {
-				System.out.println("You've logged in");
+				System.out.println("\nYou've logged in...");
 				UserInterface.mainPage();
 				break;
 				}
 		}
-	}	
+	}
+	//public scanner to call whenever terminal input required anywhere in program
+	public final static Scanner keyInput = new Scanner(System.in);
 }

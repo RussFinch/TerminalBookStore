@@ -16,7 +16,7 @@ public class Login {
 		
 		File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
 		Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
-	    Scanner keyboard = new Scanner(System.in);
+	    Scanner keyboard = BookStoreMain.keyInput;
 	    
 	    fileScanUser = fileScanner.nextLine();
 	    fileScanPass = fileScanner.nextLine(); 
@@ -36,7 +36,6 @@ public class Login {
 			String DbConSetupString = DbConManager.dbLogin(inputUsername, inputPass);
 			System.out.println(DbConSetupString);
 			state = "loggedIn";
-			keyboard.close();
 			}
 		else {
 			System.out.print(inputUsername + " your username or password is incorrect.\n");
@@ -45,5 +44,3 @@ public class Login {
 	return state;
 	}
 }
-	
-
