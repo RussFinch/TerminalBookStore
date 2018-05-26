@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class UserInterface {
+public class MainInterface {
 	
 	public static void mainPage() {
 		
@@ -19,40 +19,24 @@ public class UserInterface {
 		while (mainPageScanner.hasNextLine()) {
 			userInput = mainPageScanner.nextLine();
 			if (userInput.equals("1") || userInput.equals("1.")) {
-				enterBookMenu();
+				EnterBook.enterBookMenu();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
-				updateBookMenu();
+				UpdateBook.updateBookMenu();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
-				deleteBookMenu();
+				DeleteBook.deleteBookMenu();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
-				searchBookMenu();
+				SearchBook.searchBookMenu();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
-				searchBookMenu();
+				System.exit(0);  // look at this again later
 				}
 			else {
 				System.out.println("Invalid Selection:");
 				System.out.println("Please enter a valid selection: ");
-				}
 			}
 		}
-	
-	public static void enterBookMenu() {
-		System.out.println("This is the enter book menu");
-	}
-	
-	public static void updateBookMenu() {
-		System.out.println("This is the update book menu");
-	}
-	
-	public static void deleteBookMenu() {
-		System.out.println("This is the delete book menu");
-	}
-	
-	public static void searchBookMenu() {
-		System.out.println("This is the search book menu");
 	}
 }
