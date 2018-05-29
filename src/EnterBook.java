@@ -20,7 +20,7 @@ public class EnterBook {
 		String title = "";
 		String description = "";
 		String genre = "";
-		String price = "";  //need a way of validating currency input.
+		String price = "";
 		String author_id = "";
 		String publisher_id = "";
 		String publish_date = "";
@@ -31,14 +31,13 @@ public class EnterBook {
 		String fileScanUser = "";
 		String fileScanPass = "";
 		
-		
 		Scanner enterBookScanner = BookStoreMain.keyInput;
 		
 		//Interface output and navigation
 		System.out.println("\n*****  Enter Book *****");
 		System.out.println("0.  Main Menu - at any time");
 		System.out.println("\n1 of 10 - Enter book ID:");
-		while (enterBookScanner.hasNextLine()) {    			//Validate ID number is int
+		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
 				MainInterface.mainPage();
@@ -51,7 +50,6 @@ public class EnterBook {
 				break;
 				}
 		}
-		
 		System.out.println("2 of 10 - Enter book Title:");
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
@@ -66,7 +64,6 @@ public class EnterBook {
 				break;
 				}
 		}
-		
 		System.out.println("3 of 10 - Enter Description:");
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
@@ -78,8 +75,7 @@ public class EnterBook {
 				break;
 				}
 		}
-		
-		System.out.println("4 of 10 - Enter Genre:");  //Genre should be its own table
+		System.out.println("4 of 10 - Enter Genre:");
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
@@ -90,8 +86,7 @@ public class EnterBook {
 				break;
 				}
 		}
-
-		System.out.println("5 of 10 - Enter price:");  // Needs currency format validation
+		System.out.println("5 of 10 - Enter price:");
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
@@ -105,7 +100,6 @@ public class EnterBook {
 				break;
 				}
 		}
-		
 		System.out.println("6 of 10 - Enter Author ID:");  //Needs existing Author validation
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
@@ -117,7 +111,6 @@ public class EnterBook {
 				break;
 				}
 		}
-		
 		System.out.println("7 of 10 - Enter Publisher ID:");  //Needs existing Publisher validation
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
@@ -129,7 +122,6 @@ public class EnterBook {
 				break;
 				}
 		}
-		
 		System.out.println("8 of 10 - Enter date published  DD/MM/YYYY:");  //  Needs date format validation
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
@@ -141,7 +133,6 @@ public class EnterBook {
 				break;
 				}
 		}
-		
 		System.out.println("9 of 10 - Enter Edition Number:");  // make sure int is used
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
@@ -153,7 +144,6 @@ public class EnterBook {
 				break;
 				}
 		}
-		
 		System.out.println("10 of 10 - Enter Quantity:");  //make sure int is used.
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
@@ -165,7 +155,6 @@ public class EnterBook {
 				break;
 				}
 		}
-		
 		File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
 		Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
 	    
