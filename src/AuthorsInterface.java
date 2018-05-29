@@ -1,39 +1,39 @@
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class MainInterface {
+public class AuthorsInterface {
 	
-	public static void mainPage() throws FileNotFoundException {
+	public static void authorsPage() throws FileNotFoundException {
 		
 		String userInput = "";
-		Scanner mainPageScanner = BookStoreMain.keyInput;
+		Scanner authorsPageScanner = BookStoreMain.keyInput;
 		
-		System.out.println("\n*****  Main Page *****");
+		System.out.println("\n*****  Authors Page *****");
 		System.out.println();
-		System.out.println("1. Books");
-		System.out.println("2. Authors");
-		System.out.println("3. Publishers");
+		System.out.println("1. Enter Author");
+		System.out.println("2. Update Author");
+		System.out.println("3. Delete Author");
 		System.out.println("4. Search");
-		System.out.println("0. Quit\n");
+		System.out.println();
+		System.out.println("0. Main Menu");
 		System.out.println("Please enter selection: ");
 
-		while (mainPageScanner.hasNextLine()) {
-			userInput = mainPageScanner.nextLine();
+		while (authorsPageScanner.hasNextLine()) {
+			userInput = authorsPageScanner.nextLine();
 			if (userInput.equals("1") || userInput.equals("1.")) {
-				BooksInterface.booksPage();
+				EnterAuthor.enterAuthorMenu();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
-				AuthorsInterface.authorsPage();
+				UpdateAuthor.updateAuthorMenu();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
-				PublishersInterface.PublishersPage();
+				DeleteAuthor.deleteAuthorMenu();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
 				Search.searchMenu();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
-				System.out.println("System Quit...");
-				System.exit(0);  								// look at this again later
+				MainInterface.mainPage();
 				}
 			else {
 				System.out.println("Invalid Selection:");

@@ -35,7 +35,7 @@ public class EnterBook {
 		Scanner enterBookScanner = BookStoreMain.keyInput;
 		
 		//Interface output and navigation
-		System.out.println("\n*****  Enter Book Menu *****");
+		System.out.println("\n*****  Enter Book *****");
 		System.out.println("0.  Main Menu - at any time");
 		System.out.println("\n1 of 10 - Enter book ID:");
 		while (enterBookScanner.hasNextLine()) {    			//Validate ID number is int
@@ -97,6 +97,9 @@ public class EnterBook {
 			if (userInput.equals("0") || userInput.equals("0.")) {
 				MainInterface.mainPage();
 		    	}
+			else if (userInput.equals("")) {
+				System.out.println("Book price cannot be blank.  Please enter a value.");
+				}
 			else {
 				price = userInput;
 				break;
