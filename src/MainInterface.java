@@ -1,8 +1,9 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class MainInterface {
 	
-	public static void mainPage() {
+	public static void mainPage() throws FileNotFoundException {
 		
 		String userInput = "";
 		Scanner mainPageScanner = BookStoreMain.keyInput;
@@ -31,7 +32,8 @@ public class MainInterface {
 				SearchBook.searchBookMenu();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
-				System.exit(0);  // look at this again later
+				System.out.println("System Quit...");
+				System.exit(0);  								// look at this again later
 				}
 			else {
 				System.out.println("Invalid Selection:");

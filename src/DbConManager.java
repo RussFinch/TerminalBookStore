@@ -16,7 +16,8 @@ public class DbConManager {
 			
 				// Create database tables if not already existing
 				String sqlCreateTableBooks = "CREATE TABLE IF NOT EXISTS books "
-						+ "(id INT, title VARCHAR(50),"
+						+ "(id INT,"
+						+ " title VARCHAR(50),"
 						+ " description VARCHAR(255),"
 						+ " genre VARCHAR(50),"
 						+ " price DECIMAL(4,2),"
@@ -27,7 +28,7 @@ public class DbConManager {
 						+ " qty INT,"
 						+ " PRIMARY KEY (id));";
 				int countBooksCreation = stmt.executeUpdate(sqlCreateTableBooks);
-				System.out.println("\n" + (countBooksCreation + 1) + ": Books Database table verified in setup.");
+				System.out.println("\n" + (countBooksCreation + 1) + " database table called 'Books' verified in setup.");
 				
 				String sqlCreateTablePublishers = "CREATE TABLE IF NOT EXISTS publishers "
 						+ "(publisher_id VARCHAR(10),"
@@ -40,7 +41,7 @@ public class DbConManager {
 						+ " address_postcode VARCHAR(8),"
 						+ " PRIMARY KEY (publisher_id));";
 				int countPublishersCreation = stmt.executeUpdate(sqlCreateTablePublishers);
-				System.out.println((countPublishersCreation + 1) + ": Publishers Database table verified in setup.");
+				System.out.println((countPublishersCreation + 1) + " database table called 'Publishers' verified in setup.");
 				
 				String sqlCreateTableAuthors = "CREATE TABLE IF NOT EXISTS authors "
 						+ "(author_id VARCHAR(10),"
@@ -48,7 +49,7 @@ public class DbConManager {
 						+ " author_surname VARCHAR(20),"
 						+ " PRIMARY KEY (author_id));";
 				int countAuthorsCreation = stmt.executeUpdate(sqlCreateTableAuthors);
-				System.out.println((countAuthorsCreation + 1) + ": Publishers Database table verified in setup.");
+				System.out.println((countAuthorsCreation + 1) + " database table called 'Authors' verified in setup.");
 /*			
 				//Insert test data
 				String sqlInsertBooksData = "insert into books values "
