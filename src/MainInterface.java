@@ -14,6 +14,7 @@ public class MainInterface {
 		System.out.println("2. Authors");
 		System.out.println("3. Publishers");
 		System.out.println("4. Search");
+		System.out.println();
 		System.out.println("0. Quit\n");
 		System.out.println("Please enter selection: ");
 

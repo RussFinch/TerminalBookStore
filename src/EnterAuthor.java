@@ -1,10 +1,4 @@
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 
 public class EnterAuthor {
@@ -18,10 +12,6 @@ public class EnterAuthor {
 	String author_id = "";
 	String author_firstname = "";
 	String author_surname = "";
-	
-	//MySQL Login details
-	String fileScanUser = "";
-	String fileScanPass = "";
 	
 	Scanner enterAuthorScanner = BookStoreMain.keyInput;
 	
@@ -43,7 +33,6 @@ public class EnterAuthor {
 			break;
 			}
 		}
-	
 	System.out.println("2 of 3 - Enter Authors First Name:");
 	while (enterAuthorScanner.hasNextLine()) {
 		userInput = enterAuthorScanner.nextLine();
@@ -58,7 +47,6 @@ public class EnterAuthor {
 			break;
 			}
 	}
-	
 	System.out.println("3 of 3 - Enter Authors Surname:");
 	while (enterAuthorScanner.hasNextLine()) {
 		userInput = enterAuthorScanner.nextLine();
@@ -70,35 +58,12 @@ public class EnterAuthor {
 			break;
 			}
 	}
-	
-	File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
-	Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
-    
-    fileScanUser = fileScanner.nextLine();
-    fileScanPass = fileScanner.nextLine(); 
-    fileScanner.close();
-	
-	String DbUrlString = "jdbc:mysql://win81-desktop.home.local:3306/ebookstore?useSSL=FALSE";
-	System.out.println("\nInserting Book into Database...");
-	
-	try (
-		Connection conn = DriverManager.getConnection(DbUrlString, fileScanUser, fileScanPass);
-		Statement stmt = conn.createStatement();
-		) {
-			
-		// SQL string to insert book information into database
-		String sqlInsertAuthor = "INSERT INTO authors VALUES "
-				+ "('" + author_id + "', '"
-				+ author_firstname + "', '"
-				+ author_surname + "');";
-		System.out.println("The SQL query is: " + sqlInsertAuthor);
-		int countAuthorInsertion = stmt.executeUpdate(sqlInsertAuthor);
-		System.out.println((countAuthorInsertion) + " Author called '" + author_firstname + " "
-											+ author_surname + "' inserted into database.");
-				
-	} catch(SQLException ex) {
-		ex.printStackTrace();
-		}
+	//Execute SQL to insert Author
+	String sqlInsertAuthor = "INSERT INTO authors VALUES "
+			+ "('" + author_id + "', '"
+			+ author_firstname + "', '"
+			+ author_surname + "');";
+	System.out.println("Author update " + DbConnection.queryDatabase(sqlInsertAuthor));
 	
 	MainInterface.mainPage();
 	}

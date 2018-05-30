@@ -22,4 +22,5 @@ public class BookStoreMain {
 	}
 	//public scanner to call whenever terminal input required anywhere in program
 	public final static Scanner keyInput = new Scanner(System.in);
+	
 }
