@@ -15,11 +15,12 @@ public class BookStoreMain {
 				}
 			else if (userState.equals("loggedIn")) {
 				System.out.println("\nYou've logged in...");
-				UserInterface.mainPage();
+				MainInterface.mainPage();
 				break;
 				}
 		}
 	}
 	//public scanner to call whenever terminal input required anywhere in program
 	public final static Scanner keyInput = new Scanner(System.in);
+	
 }
