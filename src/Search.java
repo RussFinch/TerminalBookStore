@@ -16,6 +16,7 @@ public class Search {
 			System.out.println("1.  Book");
 			System.out.println("2.  Author");
 			System.out.println("3.  Publisher");
+			System.out.println("4.  Genre");
 			System.out.println();
 			System.out.println("0.  Main Menu");
 			System.out.println("Please enter selection");
@@ -30,6 +31,9 @@ public class Search {
 			    	}
 				else if (userInput.equals("3") || userInput.equals("3.")) {
 					SearchPublisher.searchPublisherMenu();
+			    	}
+				else if (userInput.equals("4") || userInput.equals("4.")) {
+					SearchGenre.searchGenreMenu();
 			    	}
 				else if (userInput.equals("0") || userInput.equals("0.")) {
 					MainInterface.mainPage();

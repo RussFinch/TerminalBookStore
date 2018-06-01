@@ -30,7 +30,7 @@ public class BooksInterface {
 				DeleteBook.deleteBookMenu();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
-				Search.searchMenu();
+				SearchBook.SearchBookMenu();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
 				MainInterface.mainPage();

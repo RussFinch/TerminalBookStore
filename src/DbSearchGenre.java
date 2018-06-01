@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class DbSearchBooks {
-
-	public static String searchBooks (String sqlQuery) throws FileNotFoundException {
+public class DbSearchGenre {
+	
+	public static String searchGenre (String sqlQuery) throws FileNotFoundException {
 		
 		String fileScanUser = "";
 		String fileScanPass = "";
@@ -36,25 +36,13 @@ public class DbSearchBooks {
 			
 			int rowCount = 0;
 			
-			System.out.println("BOOK ID:\tTITLE:\t\tDESCRIPTION:\tGENRE ID:\tPRICE:\tAUTHOR ID:"
-					+ "\tPUBLISHER ID:\tPUBLISH DATE:\t\tEDITION:\t\tQUANTITY:\t");
+			System.out.println("GENRE ID:\tGENRE NAME:");
 			
 			while (rset.next()) {
-				String id = rset.getString("id");
-				String title = rset.getString("title");
-				String description = rset.getString("description");
 				String genre_id = rset.getString("genre_id");
-				String price = rset.getString("price");
-				String author_id = rset.getString("author_id");
-				String publisher_id = rset.getString("publisher_id");
-				String publish_date = rset.getString("publish_date");
-				String edition = rset.getString("edition");
-				String qty = rset.getString("qty");
+				String genre_name = rset.getString("genre_name");
 
-				System.out.println(id + "\t\t" + title + "\t\t" + description + "\t"
-											+ genre_id + "\t" + price + "\t" + author_id
-											+ "\t" + publisher_id + "\t" + publish_date
-											+ "\t" + edition + "\t" + qty);
+				System.out.println(genre_id + "\t\t" + genre_name);
 				++rowCount;
 			}
 

@@ -33,7 +33,7 @@ public class SearchBook {
 			
 		String sqlSearchBook = "SELECT * FROM books WHERE id LIKE '%" + searchVariable + "%' "
 											+ "OR title LIKE '%" + searchVariable + "%' "
-											+ "OR genre LIKE '%" + searchVariable + "%';"; 
+											+ "OR genre_id LIKE '%" + searchVariable + "%';"; 
 		System.out.println(DbSearchBooks.searchBooks(sqlSearchBook) + " book search.");
 			
 		MainInterface.mainPage();

@@ -11,7 +11,7 @@ public class DbSetupManager {
 										+ "(id INT,"
 										+ " title VARCHAR(50),"
 										+ " description VARCHAR(255),"
-										+ " genre VARCHAR(50),"
+										+ " genre_id VARCHAR(50),"
 										+ " price DECIMAL(4,2),"
 										+ " author_id VARCHAR(10),"
 										+ " publisher_id VARCHAR(10),"
@@ -44,16 +44,15 @@ public class DbSetupManager {
 										+ " PRIMARY KEY (author_id));";
 		System.out.println("Authors table verification " 
 										+ DbConnection.queryDatabase(sqlCreateTableAuthors));
-					
-		//Insert test data  -  Needs updating for latest tables
-/*		String sqlInsertTestData = "insert into books values "
-							+ "(3001, 'A Tale of Two Cities', 'Charles Dickens', 30), "
-							+ "(3002, 'Harry Potter and the Philosophers Stone', 'J.K. Rowling', 40), "
-							+ "(3003, 'The Lion the Witch and the Wardrobe', 'C.S. Lewis', 25), "
-							+ "(3004, 'The Lord of theRings', 'J.R.R Tolkien', 37), "
-							+ "(3005, 'Alice in Wonderland', 'Lewis Carroll', 12)";
-		System.out.println("Test Data setup " + DbConnection.queryDatabase(sqlInsertTestData));
-*/		
-		return "\nDatabase Setup complete.";
+		
+		//SQL to create/verify genre database table
+		String sqlCreateTableGenre = "CREATE TABLE IF NOT EXISTS genre "
+										+ "(genre_id VARCHAR(3),"
+										+ " genre_name VARCHAR(50),"
+										+ " PRIMARY KEY (genre_id));";
+		System.out.println("Genre table verification " 
+										+ DbConnection.queryDatabase(sqlCreateTableGenre));
+
+		return "\nDatabase Setup/verification complete.";
 	}
 }
