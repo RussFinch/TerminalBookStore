@@ -13,7 +13,8 @@ public class MainInterface {
 		System.out.println("1. Books");
 		System.out.println("2. Authors");
 		System.out.println("3. Publishers");
-		System.out.println("4. Search");
+		System.out.println("4. Genre");
+		System.out.println("5. Search");
 		System.out.println();
 		System.out.println("0. Quit\n");
 		System.out.println("Please enter selection: ");
@@ -30,6 +31,9 @@ public class MainInterface {
 				PublishersInterface.PublishersPage();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
+				GenreInterface.GenrePage();
+		    	}
+			else if (userInput.equals("5") || userInput.equals("5.")) {
 				Search.searchMenu();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {

@@ -13,7 +13,7 @@ public class EnterBook {
 		String id = "";
 		String title = "";
 		String description = "";
-		String genre = "";
+		String genre_id = "";
 		String price = "";
 		String author_id = "";
 		String publisher_id = "";
@@ -65,14 +65,14 @@ public class EnterBook {
 				break;
 				}
 		}
-		System.out.println("4 of 10 - Enter Genre:");
+		System.out.println("4 of 10 - Enter Genre ID:");
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
 				MainInterface.mainPage();
 		    	}
 			else {
-				genre = userInput;
+				genre_id = userInput;
 				break;
 				}
 		}
@@ -151,7 +151,7 @@ public class EnterBook {
 							+ "('" + id + "', '"
 							+ title + "', '"
 							+ description + "', '"
-							+ genre + "', "
+							+ genre_id + "', "
 							+ price + ", '"
 							+ author_id + "', '"
 							+ publisher_id + "', "

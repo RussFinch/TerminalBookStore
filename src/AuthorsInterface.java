@@ -30,7 +30,7 @@ public class AuthorsInterface {
 				DeleteAuthor.deleteAuthorMenu();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
-				Search.searchMenu();
+				SearchAuthor.searchAuthorMenu();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
 				MainInterface.mainPage();

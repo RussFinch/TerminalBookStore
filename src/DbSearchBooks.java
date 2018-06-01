@@ -36,14 +36,14 @@ public class DbSearchBooks {
 			
 			int rowCount = 0;
 			
-			System.out.println("BOOK ID:\tTITLE:\t\tDESCRIPTION:\tGENRE:\tPRICE:\tAUTHOR ID:"
+			System.out.println("BOOK ID:\tTITLE:\t\tDESCRIPTION:\tGENRE ID:\tPRICE:\tAUTHOR ID:"
 					+ "\tPUBLISHER ID:\tPUBLISH DATE:\t\tEDITION:\t\tQUANTITY:\t");
 			
 			while (rset.next()) {
 				String id = rset.getString("id");
 				String title = rset.getString("title");
 				String description = rset.getString("description");
-				String genre = rset.getString("genre");
+				String genre_id = rset.getString("genre_id");
 				String price = rset.getString("price");
 				String author_id = rset.getString("author_id");
 				String publisher_id = rset.getString("publisher_id");
@@ -52,7 +52,7 @@ public class DbSearchBooks {
 				String qty = rset.getString("qty");
 
 				System.out.println(id + "\t\t" + title + "\t\t" + description + "\t"
-											+ genre + "\t" + price + "\t" + author_id
+											+ genre_id + "\t" + price + "\t" + author_id
 											+ "\t" + publisher_id + "\t" + publish_date
 											+ "\t" + edition + "\t" + qty);
 				++rowCount;

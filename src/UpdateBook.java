@@ -20,7 +20,7 @@ public class UpdateBook {
 		System.out.println("1.  ID");
 		System.out.println("2.  Title");
 		System.out.println("3.  Description");
-		System.out.println("4.  Genre");
+		System.out.println("4.  Genre ID");
 		System.out.println("5.  Price");
 		System.out.println("6.  Author ID");
 		System.out.println("7.  Publisher ID");
@@ -76,11 +76,11 @@ public class UpdateBook {
 				System.out.println("Enter Book ID of record to be updated");
 				id = updateBookScanner.nextLine();
 				System.out.println();
-				System.out.println("Enter New Genre");
+				System.out.println("Enter New Genre ID");
 				updateVariable = updateBookScanner.nextLine();
-				String sqlUpdateBookGenre = "UPDATE books SET genre = '" + updateVariable 
+				String sqlUpdateBookGenre = "UPDATE books SET genre_id = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
-				System.out.println("Book Genre update "
+				System.out.println("Book Genre ID update "
 						+ DbConnection.queryDatabase(sqlUpdateBookGenre));
 				MainInterface.mainPage();
 		    	}
