@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class AuthorsInterface {
 	
-	public static void authorsPage() throws FileNotFoundException {
+	public static void authorsPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";
 		Scanner authorsPageScanner = BookStoreMain.keyInput;

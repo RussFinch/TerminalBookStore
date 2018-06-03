@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Search {
 	
-	public static void searchMenu() throws FileNotFoundException {
+	public static void searchMenu() throws FileNotFoundException, SQLException {
 		
 			//  Scanner Variable
 			String userInput = "";

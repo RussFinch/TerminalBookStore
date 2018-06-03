@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class UpdateGenre {
 	
-	public static void updateGenreMenu() throws FileNotFoundException {
+	public static void updateGenreMenu() throws FileNotFoundException, SQLException {
 		
 		//  Scanner Variable
 		String userInput = "";

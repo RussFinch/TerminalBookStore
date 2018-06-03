@@ -2,8 +2,8 @@ import java.io.FileNotFoundException;
 
 public class DbSetupManager {
 	
-	public static String dbLogin(String userName, String password) throws FileNotFoundException {
-
+	public static String dbSetup() throws FileNotFoundException {
+		
 		System.out.println("\nDatabase Setup Commencing...");
 			
 		// SQL to create/verify Books database table		
