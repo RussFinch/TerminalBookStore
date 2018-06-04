@@ -152,11 +152,11 @@ public class DbDataManager {
 	            		+ "\t" + price + "\t" + author_id + "\t" + publisher_id + "\t"
 	            		+ publish_date + "\t" + edition + "\t" + qty);
 	            String sqlBookUpload =
-	                    "INSERT INTO genre (id, title, description, genre_id, price, author_id,"
+	                    "INSERT INTO books (id, title, description, genre_id, price, author_id,"
 	                    + "publisher_id, publish_date, edition, qty) values "
 	                    + "('" + id + "', '" + title + "', '" + description + "', '"
 	                    + genre_id + "', '" + price + "', '" + author_id + "', '"
-	                    + publisher_id + "', '" + publish_date + "', '" + "', '"
+	                    + publisher_id + "', '" + publish_date + "', '"
 	                    + edition + "', '" + qty + "');";
 	            ps = conn.prepareStatement(sqlBookUpload);
 	            ps.executeUpdate();
@@ -219,7 +219,7 @@ public class DbDataManager {
 	            		+ "\t" + address_3 + "\t" + address_town + "\t" + address_county + "\t"
 	            		+ address_postcode);
 	            String sqlPublisherUpload =
-	                    "INSERT INTO genre (publisher_id, publisher_name, address_1, address_2, address_3, address_town,"
+	                    "INSERT INTO publishers (publisher_id, publisher_name, address_1, address_2, address_3, address_town,"
 	                    + "address_county, address_postcode) values "
 	                    + "('" + publisher_id + "', '" + publisher_name + "', '" + address_1 + "', '"
 	                    + address_2 + "', '" + address_3 + "', '" + address_town + "', '"

@@ -22,13 +22,16 @@ public class UploadDataInterface {
 		while (uploadPageScanner.hasNextLine()) {
 			userInput = uploadPageScanner.nextLine();
 			if (userInput.equals("1") || userInput.equals("1.")) {
-				DbDataManager.booksDataUpload();
+				System.out.println(DbDataManager.booksDataUpload());
+				UploadDataInterface.uploadPage();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
-				DbDataManager.authorsDataUpload();
+				System.out.println(DbDataManager.authorsDataUpload());
+				UploadDataInterface.uploadPage();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
-				DbDataManager.publishersDataUpload();
+				System.out.println(DbDataManager.publishersDataUpload());
+				UploadDataInterface.uploadPage();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
 				System.out.println(DbDataManager.genreDataUpload());
