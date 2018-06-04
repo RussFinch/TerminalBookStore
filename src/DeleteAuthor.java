@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class DeleteAuthor {
 	
-	public static void deleteAuthorMenu() throws FileNotFoundException {
+	public static void deleteAuthorMenu() throws FileNotFoundException, SQLException {
 		
 		//  Scanner Variable
 		String userInput = "";

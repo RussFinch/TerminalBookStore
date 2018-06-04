@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class DeleteGenre {
 	
-	public static void deleteGenreMenu() throws FileNotFoundException {
+	public static void deleteGenreMenu() throws FileNotFoundException, SQLException {
 	
 		//  Scanner Variable
 		String userInput = "";

@@ -1,10 +1,11 @@
 
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class EnterBook {
 	
-	public static void enterBookMenu() throws FileNotFoundException {
+	public static void enterBookMenu() throws FileNotFoundException, SQLException {
 
 		//  Scanner Variable
 		String userInput = "";
@@ -112,7 +113,7 @@ public class EnterBook {
 				break;
 				}
 		}
-		System.out.println("8 of 10 - Enter date published  DD/MM/YYYY:");
+		System.out.println("8 of 10 - Enter date published  YYYY/MM/DD:");
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {

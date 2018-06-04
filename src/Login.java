@@ -33,8 +33,8 @@ public class Login {
 	    	}
 		if (inputUsername.equals(fileScanUser) && inputPass.equals(fileScanPass)) {
 			System.out.print("\nHello " + inputUsername + "\n");
-			String DbConSetupString = DbSetupManager.dbLogin(inputUsername, inputPass);
-			System.out.println(DbConSetupString);
+//			String DbConSetupString = DbSetupManager.dbLogin(inputUsername, inputPass);
+//			System.out.println(DbConSetupString);
 			state = "loggedIn";
 			}
 		else {

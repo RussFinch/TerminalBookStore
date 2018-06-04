@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class GenreInterface {
 	
-	public static void GenrePage() throws FileNotFoundException {
+	public static void GenrePage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";
 		Scanner GenrePageScanner = BookStoreMain.keyInput;

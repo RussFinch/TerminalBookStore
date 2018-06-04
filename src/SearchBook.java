@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SearchBook {
 
-	public static void SearchBookMenu() throws FileNotFoundException {
+	public static void SearchBookMenu() throws FileNotFoundException, SQLException {
 			
 		//  Scanner Variable
 		Scanner searchPublisherScanner = BookStoreMain.keyInput;

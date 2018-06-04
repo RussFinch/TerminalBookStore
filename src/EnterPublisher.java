@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class EnterPublisher {
 	
-	public static void enterPublisherMenu() throws FileNotFoundException {
+	public static void enterPublisherMenu() throws FileNotFoundException, SQLException {
 	
 		//  Scanner Variable
 		String userInput = "";
