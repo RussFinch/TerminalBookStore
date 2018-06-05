@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class EnterGenre {
+public class CliGenreEnter {
 	
 	public static void enterGenreMenu() throws FileNotFoundException, SQLException {
 		
@@ -23,7 +23,7 @@ public class EnterGenre {
 	while (enterGenreScanner.hasNextLine()) {
 		userInput = enterGenreScanner.nextLine();
 		if (userInput.equals("0") || userInput.equals("0.")) {
-			MainInterface.mainPage();
+			CliMainPage.mainPage();
 	    	}
 		else if (userInput.equals("")) {
 			System.out.println("Genre ID cannot be blank.  Please enter.");
@@ -37,7 +37,7 @@ public class EnterGenre {
 	while (enterGenreScanner.hasNextLine()) {
 		userInput = enterGenreScanner.nextLine();
 		if (userInput.equals("0") || userInput.equals("0.")) {
-			MainInterface.mainPage();
+			CliMainPage.mainPage();
 	    	}
 		else if (userInput.equals("")) {
 			System.out.println("Genre name cannot be blank.  Please enter.");
@@ -51,8 +51,8 @@ public class EnterGenre {
 	String sqlInsertAuthor = "INSERT INTO genre VALUES "
 			+ "('" + genre_id + "', '"
 			+ genre_name + "');";
-	System.out.println("Genre update " + DbConnection.queryDatabase(sqlInsertAuthor));
+	System.out.println("Genre update " + DbInterface.queryDatabase(sqlInsertAuthor));
 	
-	MainInterface.mainPage();
+	CliMainPage.mainPage();
 	}
 }

@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class SearchAuthor {
+public class CliSearchAuthor {
 	
 	public static void searchAuthorMenu() throws FileNotFoundException, SQLException {
 				
@@ -24,7 +24,7 @@ public class SearchAuthor {
 		while (searchAuthorScanner.hasNextLine()) {
 			userInput = searchAuthorScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 				}
 			else {
 				searchVariable = userInput;
@@ -38,6 +38,6 @@ public class SearchAuthor {
 							+ "author_surname LIKE '%" + searchVariable + "%';";
 		System.out.println(DbSearchAuthors.searchAuthors(sqlSearchAuthor) + " author search.");
 				
-		MainInterface.mainPage();
+		CliMainPage.mainPage();
 	}
 }

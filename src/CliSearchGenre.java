@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class SearchGenre {
+public class CliSearchGenre {
 
 	public static void searchGenreMenu() throws FileNotFoundException, SQLException {
 		
@@ -24,7 +24,7 @@ public class SearchGenre {
 		while (searchGenreScanner.hasNextLine()) {
 			userInput = searchGenreScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 				}
 			else {
 				searchVariable = userInput;
@@ -37,6 +37,6 @@ public class SearchGenre {
 							+ "genre_name LIKE '%" + searchVariable + "%';";
 		System.out.println(DbSearchGenre.searchGenre(sqlSearchGenre) + " genre search.");
 				
-		MainInterface.mainPage();
+		CliMainPage.mainPage();
 	}
 }

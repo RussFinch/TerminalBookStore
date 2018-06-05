@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class DeleteGenre {
+public class CliGenreDelete {
 	
 	public static void deleteGenreMenu() throws FileNotFoundException, SQLException {
 	
@@ -19,7 +19,7 @@ public class DeleteGenre {
 		while (deleteGenreScanner.hasNextLine()) {
 			userInput = deleteGenreScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 	    		}
 			else if (userInput.equals("")) {
 				System.out.println("Genre ID cannot be blank.  Please enter.");
@@ -32,8 +32,8 @@ public class DeleteGenre {
 	
 		String sqlDeleteGenre = "DELETE FROM genre WHERE genre_id = '" + genre_id + "';";
 		System.out.println("Deletion of genre " 
-				+ DbConnection.queryDatabase(sqlDeleteGenre));
+				+ DbInterface.queryDatabase(sqlDeleteGenre));
 	
-		MainInterface.mainPage();
+		CliMainPage.mainPage();
 	}
 }

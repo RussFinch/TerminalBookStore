@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class DeleteAuthor {
+public class CliAuthorDelete {
 	
 	public static void deleteAuthorMenu() throws FileNotFoundException, SQLException {
 		
@@ -19,7 +19,7 @@ public class DeleteAuthor {
 		while (deleteAuthorScanner.hasNextLine()) {
 			userInput = deleteAuthorScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("")) {
 				System.out.println("Author ID cannot be blank.  Please enter.");
@@ -32,8 +32,8 @@ public class DeleteAuthor {
 		
 		String sqlDeleteAuthor = "DELETE FROM authors WHERE author_id = '" + author_id + "';";
 		System.out.println("Deletion of Author " 
-				+ DbConnection.queryDatabase(sqlDeleteAuthor));
+				+ DbInterface.queryDatabase(sqlDeleteAuthor));
 		
-		MainInterface.mainPage();
+		CliMainPage.mainPage();
 	}
 }

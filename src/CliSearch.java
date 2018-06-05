@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Search {
+public class CliSearch {
 	
 	public static void searchMenu() throws FileNotFoundException, SQLException {
 		
@@ -25,19 +25,19 @@ public class Search {
 			while (searchScanner.hasNextLine()) {
 				userInput = searchScanner.nextLine();
 				if (userInput.equals("1") || userInput.equals("1.")) {
-					SearchBook.SearchBookMenu();
+					CliSearchBook.SearchBookMenu();
 			    	}
 				else if (userInput.equals("2") || userInput.equals("2.")) {
-					SearchAuthor.searchAuthorMenu();
+					CliSearchAuthor.searchAuthorMenu();
 			    	}
 				else if (userInput.equals("3") || userInput.equals("3.")) {
-					SearchPublisher.searchPublisherMenu();
+					CliSearchPublisher.searchPublisherMenu();
 			    	}
 				else if (userInput.equals("4") || userInput.equals("4.")) {
-					SearchGenre.searchGenreMenu();
+					CliSearchGenre.searchGenreMenu();
 			    	}
 				else if (userInput.equals("0") || userInput.equals("0.")) {
-					MainInterface.mainPage();
+					CliMainPage.mainPage();
 					}
 				else {
 					System.out.println("Invalid Selection:");

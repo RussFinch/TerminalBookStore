@@ -1,5 +1,3 @@
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -7,20 +5,19 @@ public class Login {
 
 	public static String run() throws FileNotFoundException {
 		
+		String userName = "";
+		String password = "";
 		String state = "loggedOut";
-		String fileScanUser = "";
-		String fileScanPass = "";
 		String inputUsername = "";
 		String inputPass = "";
 
+		String loginString = DbInterface.DbLogin();
 		
-		File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
-		Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
-	    Scanner keyboard = BookStoreMain.keyInput;
-	    
-	    fileScanUser = fileScanner.nextLine();
-	    fileScanPass = fileScanner.nextLine(); 
-	    fileScanner.close();
+		String data[] = loginString.split(",");
+        userName = data[0];
+        password = data[1];
+		
+		Scanner keyboard = BookStoreMain.keyInput;
 	    
 	    System.out.println("Please enter user credentials:");
 	    System.out.println("Username:");
@@ -31,7 +28,7 @@ public class Login {
 			inputPass = keyboard.nextLine();
 			break;
 	    	}
-		if (inputUsername.equals(fileScanUser) && inputPass.equals(fileScanPass)) {
+		if (inputUsername.equals(userName) && inputPass.equals(password)) {
 			System.out.print("\nHello " + inputUsername + "\n");
 //			String DbConSetupString = DbSetupManager.dbLogin(inputUsername, inputPass);
 //			System.out.println(DbConSetupString);

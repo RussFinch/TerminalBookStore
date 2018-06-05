@@ -2,39 +2,39 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class GenreInterface {
+public class CliBooks {
 	
-	public static void GenrePage() throws FileNotFoundException, SQLException {
+	public static void booksPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";
-		Scanner GenrePageScanner = BookStoreMain.keyInput;
+		Scanner booksPageScanner = BookStoreMain.keyInput;
 		
-		System.out.println("\n*****  Genre Page *****");
+		System.out.println("\n*****  Books Page *****");
 		System.out.println();
-		System.out.println("1. Enter Genre");
-		System.out.println("2. Update Genre");
-		System.out.println("3. Delete Genre");
+		System.out.println("1. Enter Book");
+		System.out.println("2. Update Book");
+		System.out.println("3. Delete Book");
 		System.out.println("4. Search");
 		System.out.println();
 		System.out.println("0. Main Menu");
 		System.out.println("Please enter selection: ");
 
-		while (GenrePageScanner.hasNextLine()) {
-			userInput = GenrePageScanner.nextLine();
+		while (booksPageScanner.hasNextLine()) {
+			userInput = booksPageScanner.nextLine();
 			if (userInput.equals("1") || userInput.equals("1.")) {
-				EnterGenre.enterGenreMenu();
+				CliBookEnter.enterBookMenu();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
-				UpdateGenre.updateGenreMenu();
+				CliBookUpdate.updateBookMenu();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
-				DeleteGenre.deleteGenreMenu();
+				CliBookDelete.deleteBookMenu();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
-				SearchGenre.searchGenreMenu();
+				CliSearchBook.SearchBookMenu();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 				}
 			else {
 				System.out.println("Invalid Selection:");

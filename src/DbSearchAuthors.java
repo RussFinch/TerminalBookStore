@@ -1,30 +1,27 @@
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 
 public class DbSearchAuthors {
 	
 	public static String searchAuthors (String sqlQuery) throws FileNotFoundException {
 		
-		String fileScanUser = "";
-		String fileScanPass = "";
-		String DbUrlString = "jdbc:mysql://win81-desktop.home.local:3306/ebookstore?useSSL=FALSE";
+		String userName = "";
+		String password = "";
+		String dbUrl = "";
 		
-		File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
-		Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
+		String loginString = DbInterface.DbLogin();
 		
-	    fileScanUser = fileScanner.nextLine();
-	    fileScanPass = fileScanner.nextLine(); 
-	    fileScanner.close();
+		String data[] = loginString.split(",");
+        userName = data[0];
+        password = data[1];
+        dbUrl = data[2];
 		
 		try (
-			Connection conn = DriverManager.getConnection(DbUrlString, fileScanUser, fileScanPass);
+			Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 			Statement stmt = conn.createStatement();
 				
 			) {

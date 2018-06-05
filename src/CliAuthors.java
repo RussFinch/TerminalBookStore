@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class AuthorsInterface {
+public class CliAuthors {
 	
 	public static void authorsPage() throws FileNotFoundException, SQLException {
 		
@@ -22,19 +22,19 @@ public class AuthorsInterface {
 		while (authorsPageScanner.hasNextLine()) {
 			userInput = authorsPageScanner.nextLine();
 			if (userInput.equals("1") || userInput.equals("1.")) {
-				EnterAuthor.enterAuthorMenu();
+				CliAuthorEnter.enterAuthorMenu();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
-				UpdateAuthor.updateAuthorMenu();
+				CliAuthorUpdate.updateAuthorMenu();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
-				DeleteAuthor.deleteAuthorMenu();
+				CliAuthorDelete.deleteAuthorMenu();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
-				SearchAuthor.searchAuthorMenu();
+				CliSearchAuthor.searchAuthorMenu();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 				}
 			else {
 				System.out.println("Invalid Selection:");

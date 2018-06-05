@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class EnterPublisher {
+public class CliPublisherEnter {
 	
 	public static void enterPublisherMenu() throws FileNotFoundException, SQLException {
 	
@@ -27,7 +27,7 @@ public class EnterPublisher {
 		while (enterPublisherScanner.hasNextLine()) {
 			userInput = enterPublisherScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("")) {
 				System.out.println("Publisher ID cannot be blank.  Please enter.");
@@ -41,7 +41,7 @@ public class EnterPublisher {
 		while (enterPublisherScanner.hasNextLine()) {
 			userInput = enterPublisherScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("")) {
 				System.out.println("Publisher Name cannot be blank.  Please enter.");
@@ -55,7 +55,7 @@ public class EnterPublisher {
 		while (enterPublisherScanner.hasNextLine()) {
 			userInput = enterPublisherScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				address_1 = userInput;
@@ -66,7 +66,7 @@ public class EnterPublisher {
 		while (enterPublisherScanner.hasNextLine()) {
 			userInput = enterPublisherScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				address_2 = userInput;
@@ -77,7 +77,7 @@ public class EnterPublisher {
 		while (enterPublisherScanner.hasNextLine()) {
 			userInput = enterPublisherScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				address_3 = userInput;
@@ -88,7 +88,7 @@ public class EnterPublisher {
 		while (enterPublisherScanner.hasNextLine()) {
 			userInput = enterPublisherScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				address_town = userInput;
@@ -99,7 +99,7 @@ public class EnterPublisher {
 		while (enterPublisherScanner.hasNextLine()) {
 			userInput = enterPublisherScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				address_county = userInput;
@@ -110,7 +110,7 @@ public class EnterPublisher {
 		while (enterPublisherScanner.hasNextLine()) {
 			userInput = enterPublisherScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				address_postcode = userInput;
@@ -128,8 +128,8 @@ public class EnterPublisher {
 				+ address_county + "', '"
 				+ address_postcode + "');";
 		System.out.println("Publisher entry " 
-				+ DbConnection.queryDatabase(sqlEnterPublisher));
+				+ DbInterface.queryDatabase(sqlEnterPublisher));
 
-		MainInterface.mainPage();
+		CliMainPage.mainPage();
 	}
 }

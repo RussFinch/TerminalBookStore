@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class EnterBook {
+public class CliBookEnter {
 	
 	public static void enterBookMenu() throws FileNotFoundException, SQLException {
 
@@ -31,7 +31,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("")) {
 				System.out.println("Book ID cannot be blank.  Please enter.");
@@ -45,7 +45,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("")) {
 				System.out.println("Book Title cannot be blank.  Please enter.");
@@ -59,7 +59,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				description = userInput;
@@ -70,7 +70,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				genre_id = userInput;
@@ -81,7 +81,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("")) {
 				System.out.println("Book price cannot be blank.  Please enter a value.");
@@ -95,7 +95,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				author_id = userInput;
@@ -106,7 +106,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				publisher_id = userInput;
@@ -117,7 +117,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				publish_date = userInput;
@@ -128,7 +128,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				edition = userInput;
@@ -139,7 +139,7 @@ public class EnterBook {
 		while (enterBookScanner.hasNextLine()) {
 			userInput = enterBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else {
 				qty = userInput;
@@ -160,8 +160,8 @@ public class EnterBook {
 							+ edition + ", "
 							+ qty + ");";
 		System.out.println("Book entry "
-				+ DbConnection.queryDatabase(sqlInsertBook));
+				+ DbInterface.queryDatabase(sqlInsertBook));
 					
-		MainInterface.mainPage();
+		CliMainPage.mainPage();
 	}
 }

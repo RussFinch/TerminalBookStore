@@ -1,30 +1,31 @@
 import java.io.*;
 import java.sql.*;
-import java.util.Scanner;
 
-public class DbDataManager {
+public class DbDataUploadManager {
 
 	public static String genreDataUpload() throws FileNotFoundException, SQLException {
 		
-		String fileScanUser = "";
-		String fileScanPass = "";
+		//DB Login variables returned from DbInterface.DbLogin
+		String userName = "";
+		String password = "";
+		String dbUrl = "";
+		
+		//Genre table columns
 	    String genre_id = "";
 	    String genre_name = "";
+	    
 	    PreparedStatement ps = null;
 	    
-		File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
-		Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
-	    fileScanUser = fileScanner.nextLine();
-	    fileScanPass = fileScanner.nextLine(); 
-	    fileScanner.close();
+	    String loginString = DbInterface.DbLogin();
+		String loginArray[] = loginString.split(",");
+        userName = loginArray[0];
+        password = loginArray[1];
+        dbUrl = loginArray[2];
 
 	    try {
 	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/GenreInput.txt"));
-	        String username = fileScanUser;
-	        String password = fileScanPass;
-	        String dbUrlString = "jdbc:mysql://win81-desktop.home.local:3306/ebookstore?useSSL=FALSE";
 
-	        Connection conn = DriverManager.getConnection(dbUrlString, username, password);
+	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 
 	        String line = null;
 	        while ((line = reader.readLine()) != null) {
@@ -55,26 +56,28 @@ public class DbDataManager {
 	
 	public static String authorsDataUpload() throws FileNotFoundException, SQLException {
 		
-		String fileScanUser = "";
-		String fileScanPass = "";
+		//DB Login variables returned from DbInterface.DbLogin
+		String userName = "";
+		String password = "";
+		String dbUrl = "";
+		
+		//Genre table columns
 	    String author_id = "";
 	    String author_firstname = "";
 	    String author_surname = "";
+	    
 	    PreparedStatement ps = null;
 	    
-		File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
-		Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
-	    fileScanUser = fileScanner.nextLine();
-	    fileScanPass = fileScanner.nextLine(); 
-	    fileScanner.close();
+	    String loginString = DbInterface.DbLogin();
+		String loginArray[] = loginString.split(",");
+        userName = loginArray[0];
+        password = loginArray[1];
+        dbUrl = loginArray[2];
 
 	    try {
 	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/AuthorInput.txt"));
-	        String username = fileScanUser;
-	        String password = fileScanPass;
-	        String dbUrlString = "jdbc:mysql://win81-desktop.home.local:3306/ebookstore?useSSL=FALSE";
 
-	        Connection conn = DriverManager.getConnection(dbUrlString, username, password);
+	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 
 	        String line = null;
 	        while ((line = reader.readLine()) != null) {
@@ -106,8 +109,12 @@ public class DbDataManager {
 	
 	public static String booksDataUpload() throws FileNotFoundException, SQLException {
 		
-		String fileScanUser = "";
-		String fileScanPass = "";
+		//DB Login variables returned from DbInterface.DbLogin
+		String userName = "";
+		String password = "";
+		String dbUrl = "";
+		
+		//Genre table columns
 	    String id = "";
 	    String title = "";
 	    String description = "";
@@ -118,21 +125,19 @@ public class DbDataManager {
 	    String publish_date = "";
 	    String edition = "";
 	    String qty = "";
+	    
 	    PreparedStatement ps = null;
 	    
-		File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
-		Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
-	    fileScanUser = fileScanner.nextLine();
-	    fileScanPass = fileScanner.nextLine(); 
-	    fileScanner.close();
+	    String loginString = DbInterface.DbLogin();
+		String loginArray[] = loginString.split(",");
+        userName = loginArray[0];
+        password = loginArray[1];
+        dbUrl = loginArray[2];
 
 	    try {
 	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/BookInput.txt"));
-	        String username = fileScanUser;
-	        String password = fileScanPass;
-	        String dbUrlString = "jdbc:mysql://win81-desktop.home.local:3306/ebookstore?useSSL=FALSE";
 
-	        Connection conn = DriverManager.getConnection(dbUrlString, username, password);
+	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 
 	        String line = null;
 	        while ((line = reader.readLine()) != null) {
@@ -177,8 +182,12 @@ public class DbDataManager {
 	
 	public static String publishersDataUpload() throws FileNotFoundException, SQLException {
 		
-		String fileScanUser = "";
-		String fileScanPass = "";
+		//DB Login variables returned from DbInterface.DbLogin
+		String userName = "";
+		String password = "";
+		String dbUrl = "";
+		
+		//Genre table columns
 	    String publisher_id = "";
 	    String publisher_name = "";
 	    String address_1 = "";
@@ -187,21 +196,19 @@ public class DbDataManager {
 	    String address_town = "";
 	    String address_county = "";
 	    String address_postcode = "";
+	    
 	    PreparedStatement ps = null;
 	    
-		File inputFile = new File("/Users/russellfincham/documents/temp/MySqlLogin.txt");
-		Scanner fileScanner = new Scanner(new FileInputStream(inputFile), "UTF-8");
-	    fileScanUser = fileScanner.nextLine();
-	    fileScanPass = fileScanner.nextLine(); 
-	    fileScanner.close();
+	    String loginString = DbInterface.DbLogin();
+		String loginArray[] = loginString.split(",");
+        userName = loginArray[0];
+        password = loginArray[1];
+        dbUrl = loginArray[2];
 
 	    try {
 	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/PublisherInput.txt"));
-	        String username = fileScanUser;
-	        String password = fileScanPass;
-	        String dbUrlString = "jdbc:mysql://win81-desktop.home.local:3306/ebookstore?useSSL=FALSE";
 
-	        Connection conn = DriverManager.getConnection(dbUrlString, username, password);
+	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 
 	        String line = null;
 	        while ((line = reader.readLine()) != null) {

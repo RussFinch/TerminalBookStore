@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class EnterAuthor {
+public class CliAuthorEnter {
 	
 	public static void enterAuthorMenu() throws FileNotFoundException, SQLException {
 	
@@ -24,7 +24,7 @@ public class EnterAuthor {
 	while (enterAuthorScanner.hasNextLine()) {
 		userInput = enterAuthorScanner.nextLine();
 		if (userInput.equals("0") || userInput.equals("0.")) {
-			MainInterface.mainPage();
+			CliMainPage.mainPage();
 	    	}
 		else if (userInput.equals("")) {
 			System.out.println("Book ID cannot be blank.  Please enter.");
@@ -38,7 +38,7 @@ public class EnterAuthor {
 	while (enterAuthorScanner.hasNextLine()) {
 		userInput = enterAuthorScanner.nextLine();
 		if (userInput.equals("0") || userInput.equals("0.")) {
-			MainInterface.mainPage();
+			CliMainPage.mainPage();
 	    	}
 		else if (userInput.equals("")) {
 			System.out.println("Book Title cannot be blank.  Please enter.");
@@ -52,7 +52,7 @@ public class EnterAuthor {
 	while (enterAuthorScanner.hasNextLine()) {
 		userInput = enterAuthorScanner.nextLine();
 		if (userInput.equals("0") || userInput.equals("0.")) {
-			MainInterface.mainPage();
+			CliMainPage.mainPage();
 	    	}
 		else {
 			author_surname = userInput;
@@ -64,9 +64,9 @@ public class EnterAuthor {
 			+ "('" + author_id + "', '"
 			+ author_firstname + "', '"
 			+ author_surname + "');";
-	System.out.println("Author update " + DbConnection.queryDatabase(sqlInsertAuthor));
+	System.out.println("Author update " + DbInterface.queryDatabase(sqlInsertAuthor));
 	
-	MainInterface.mainPage();
+	CliMainPage.mainPage();
 	}
 }
 

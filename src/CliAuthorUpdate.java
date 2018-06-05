@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class UpdateAuthor {
+public class CliAuthorUpdate {
 	
 	public static void updateAuthorMenu() throws FileNotFoundException, SQLException {
 			
@@ -28,7 +28,7 @@ public class UpdateAuthor {
 		while (updateAuthorScanner.hasNextLine()) {
 			userInput = updateAuthorScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("1") || userInput.equals("1.")) {
 				System.out.println("Enter Author ID of record to be updated");
@@ -39,8 +39,8 @@ public class UpdateAuthor {
 				String sqlUpdateAuthorID = "UPDATE authors SET author_id = '" + updateVariable 
 						+ "' WHERE author_id = '" + author_id + "';";
 				System.out.println("Author ID update "
-						+ DbConnection.queryDatabase(sqlUpdateAuthorID));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateAuthorID));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
 				System.out.println("Enter Author ID of record to be updated");
@@ -51,8 +51,8 @@ public class UpdateAuthor {
 				String sqlUpdateAuthorFirstName = "UPDATE authors SET author_firstname = '" + updateVariable 
 						+ "' WHERE author_id = '" + author_id + "';";
 				System.out.println("Author First Name update "
-						+ DbConnection.queryDatabase(sqlUpdateAuthorFirstName));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateAuthorFirstName));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
 				System.out.println("Enter Author ID of record to be updated");
@@ -63,8 +63,8 @@ public class UpdateAuthor {
 				String sqlUpdateAuthorSurname = "UPDATE authors SET author_surname = '" + updateVariable 
 						+ "' WHERE author_id = '" + author_id + "';";
 				System.out.println("Author Surname update "
-						+ DbConnection.queryDatabase(sqlUpdateAuthorSurname));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateAuthorSurname));
+				CliMainPage.mainPage();
 		    	}
 			else {
 				System.out.println("Please make a valid selection.");

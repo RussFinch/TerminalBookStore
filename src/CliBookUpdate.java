@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class UpdateBook {
+public class CliBookUpdate {
 	
 	public static void updateBookMenu() throws FileNotFoundException, SQLException {
 		
@@ -35,7 +35,7 @@ public class UpdateBook {
 		while (updateBookScanner.hasNextLine()) {
 			userInput = updateBookScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("1") || userInput.equals("1.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -46,8 +46,8 @@ public class UpdateBook {
 				String sqlUpdateBookID = "UPDATE books SET id = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book ID update "
-						+ DbConnection.queryDatabase(sqlUpdateBookID));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookID));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -58,8 +58,8 @@ public class UpdateBook {
 				String sqlUpdateBookTitle = "UPDATE books SET title = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book Title update "
-						+ DbConnection.queryDatabase(sqlUpdateBookTitle));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookTitle));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -70,8 +70,8 @@ public class UpdateBook {
 				String sqlUpdateBookDescription = "UPDATE books SET description = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book Description update "
-						+ DbConnection.queryDatabase(sqlUpdateBookDescription));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookDescription));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -82,8 +82,8 @@ public class UpdateBook {
 				String sqlUpdateBookGenre = "UPDATE books SET genre_id = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book Genre ID update "
-						+ DbConnection.queryDatabase(sqlUpdateBookGenre));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookGenre));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("5") || userInput.equals("5.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -94,8 +94,8 @@ public class UpdateBook {
 				String sqlUpdateBookPrice = "UPDATE books SET price = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book Price update "
-						+ DbConnection.queryDatabase(sqlUpdateBookPrice));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookPrice));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("6") || userInput.equals("6.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -106,8 +106,8 @@ public class UpdateBook {
 				String sqlUpdateBookAuthorID = "UPDATE books SET author_id = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book Author ID update "
-						+ DbConnection.queryDatabase(sqlUpdateBookAuthorID));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookAuthorID));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("7") || userInput.equals("7.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -118,8 +118,8 @@ public class UpdateBook {
 				String sqlUpdateBookPublisherId = "UPDATE books SET publisher_id = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book Publisher ID update "
-						+ DbConnection.queryDatabase(sqlUpdateBookPublisherId));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookPublisherId));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("8") || userInput.equals("8.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -130,8 +130,8 @@ public class UpdateBook {
 				String sqlUpdateBookPublishDate = "UPDATE books SET publish_date = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book Publish Date update "
-						+ DbConnection.queryDatabase(sqlUpdateBookPublishDate));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookPublishDate));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("9") || userInput.equals("9.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -142,8 +142,8 @@ public class UpdateBook {
 				String sqlUpdateBookEdition = "UPDATE books SET edition = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book Edition update "
-						+ DbConnection.queryDatabase(sqlUpdateBookEdition));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookEdition));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("10") || userInput.equals("10.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -154,8 +154,8 @@ public class UpdateBook {
 				String sqlUpdateBookQty = "UPDATE books SET qty = '" + updateVariable 
 						+ "' WHERE id = '" + id + "';";
 				System.out.println("Book Quantity update "
-						+ DbConnection.queryDatabase(sqlUpdateBookQty));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateBookQty));
+				CliMainPage.mainPage();
 		    	}
 			else {
 				System.out.println("Please make a valid selection.");

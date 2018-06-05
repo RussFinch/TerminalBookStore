@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class UpdateGenre {
+public class CliGenreUpdate {
 	
 	public static void updateGenreMenu() throws FileNotFoundException, SQLException {
 		
@@ -27,7 +27,7 @@ public class UpdateGenre {
 		while (updateGenreScanner.hasNextLine()) {
 			userInput = updateGenreScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("1") || userInput.equals("1.")) {
 				System.out.println("Enter Genre ID of record to be updated");
@@ -38,8 +38,8 @@ public class UpdateGenre {
 				String sqlUpdateGenreID = "UPDATE genre SET genre_id = '" + updateVariable 
 						+ "' WHERE genre_id = '" + genre_id + "';";
 				System.out.println("Genre ID update "
-						+ DbConnection.queryDatabase(sqlUpdateGenreID));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateGenreID));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
 				System.out.println("Enter Genre ID of record to be updated");
@@ -50,8 +50,8 @@ public class UpdateGenre {
 				String sqlUpdateGenreName = "UPDATE genre SET genre_name = '" + updateVariable 
 						+ "' WHERE genre_id = '" + genre_id + "';";
 				System.out.println("Author First Name update "
-						+ DbConnection.queryDatabase(sqlUpdateGenreName));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdateGenreName));
+				CliMainPage.mainPage();
 				}
 			else {
 				System.out.println("Please make a valid selection.");

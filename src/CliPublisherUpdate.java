@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class UpdatePublisher {
+public class CliPublisherUpdate {
 	
 	public static void updatePublisherMenu() throws FileNotFoundException, SQLException {
 	
@@ -33,7 +33,7 @@ public class UpdatePublisher {
 		while (updatePublisherScanner.hasNextLine()) {
 			userInput = updatePublisherScanner.nextLine();
 			if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("1") || userInput.equals("1.")) {
 				System.out.println("Enter Publisher ID of record to be updated");
@@ -44,8 +44,8 @@ public class UpdatePublisher {
 				String sqlUpdatePublisherID = "UPDATE Publishers SET publisher_id = '" + updateVariable 
 						+ "' WHERE publisher_id = '" + id + "';";
 				System.out.println("Publisher ID update "
-						+ DbConnection.queryDatabase(sqlUpdatePublisherID));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdatePublisherID));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -56,8 +56,8 @@ public class UpdatePublisher {
 				String sqlUpdatePublisherName = "UPDATE Publishers SET publisher_name = '" + updateVariable 
 						+ "' WHERE publisher_id = '" + id + "';";
 				System.out.println("Publisher Name update "
-						+ DbConnection.queryDatabase(sqlUpdatePublisherName));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdatePublisherName));
+				CliMainPage.mainPage();
 				}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -68,8 +68,8 @@ public class UpdatePublisher {
 				String sqlUpdatePubliserAddress1 = "UPDATE Publishers SET address_1 = '" + updateVariable 
 						+ "' WHERE publisher_id = '" + id + "';";
 				System.out.println("Publisher Address 1 update "
-						+ DbConnection.queryDatabase(sqlUpdatePubliserAddress1));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdatePubliserAddress1));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -80,8 +80,8 @@ public class UpdatePublisher {
 				String sqlUpdatePubliserAddress2 = "UPDATE Publishers SET address_2 = '" + updateVariable 
 						+ "' WHERE publisher_id = '" + id + "';";
 				System.out.println("Publisher Address 2 update "
-						+ DbConnection.queryDatabase(sqlUpdatePubliserAddress2));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdatePubliserAddress2));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("5") || userInput.equals("5.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -92,8 +92,8 @@ public class UpdatePublisher {
 				String sqlUpdatePubliserAddress3 = "UPDATE Publishers SET address_3 = '" + updateVariable 
 						+ "' WHERE publisher_id = '" + id + "';";
 				System.out.println("Publisher Address 3 update "
-						+ DbConnection.queryDatabase(sqlUpdatePubliserAddress3));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdatePubliserAddress3));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("6") || userInput.equals("6.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -104,8 +104,8 @@ public class UpdatePublisher {
 				String sqlUpdatePublisherAddressTown = "UPDATE Publishers SET address_town = '" + updateVariable 
 						+ "' WHERE publisher_id = '" + id + "';";
 				System.out.println("Publisher Address Town update "
-						+ DbConnection.queryDatabase(sqlUpdatePublisherAddressTown));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdatePublisherAddressTown));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("7") || userInput.equals("7.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -116,8 +116,8 @@ public class UpdatePublisher {
 				String sqlUpdatePublisherAddressCounty = "UPDATE Publishers SET address_county = '" + updateVariable 
 						+ "' WHERE publisher_id = '" + id + "';";
 				System.out.println("Publisher AddressCounty update "
-						+ DbConnection.queryDatabase(sqlUpdatePublisherAddressCounty));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdatePublisherAddressCounty));
+				CliMainPage.mainPage();
 		    	}
 			else if (userInput.equals("8") || userInput.equals("8.")) {
 				System.out.println("Enter Book ID of record to be updated");
@@ -128,8 +128,8 @@ public class UpdatePublisher {
 				String sqlUpdatePublisherPostcode = "UPDATE Publishers SET address_postcode = '" + updateVariable 
 						+ "' WHERE publisher_id = '" + id + "';";
 				System.out.println("Book Publisher Postcode update "
-						+ DbConnection.queryDatabase(sqlUpdatePublisherPostcode));
-				MainInterface.mainPage();
+						+ DbInterface.queryDatabase(sqlUpdatePublisherPostcode));
+				CliMainPage.mainPage();
 		    	}
 			else {
 				System.out.println("Please make a valid selection.");

@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class MainInterface {
+public class CliMainPage {
 	
 	public static void mainPage() throws FileNotFoundException, SQLException {
 		
@@ -17,7 +17,7 @@ public class MainInterface {
 		System.out.println("4. Genre");
 		System.out.println("5. Search");
 		System.out.println();
-		System.out.println("6. Setup");
+		System.out.println("6. Settings");
 		System.out.println();
 		System.out.println("0. Quit\n");
 		System.out.println("Please enter selection: ");
@@ -25,22 +25,22 @@ public class MainInterface {
 		while (mainPageScanner.hasNextLine()) {
 			userInput = mainPageScanner.nextLine();
 			if (userInput.equals("1") || userInput.equals("1.")) {
-				BooksInterface.booksPage();
+				CliBooks.booksPage();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
-				AuthorsInterface.authorsPage();
+				CliAuthors.authorsPage();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
-				PublishersInterface.PublishersPage();
+				CliPublishers.PublishersPage();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
-				GenreInterface.GenrePage();
+				CliGenre.GenrePage();
 		    	}
 			else if (userInput.equals("5") || userInput.equals("5.")) {
-				Search.searchMenu();
+				CliSearch.searchMenu();
 		    	}
 			else if (userInput.equals("6") || userInput.equals("6.")) {
-				SetupInterface.setupPage();
+				CliSettings.setupPage();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
 				System.out.println("System Quit...");

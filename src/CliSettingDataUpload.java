@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class UploadDataInterface {
+public class CliSettingDataUpload {
 
 	public static void uploadPage() throws FileNotFoundException, SQLException {
 		
@@ -22,23 +22,23 @@ public class UploadDataInterface {
 		while (uploadPageScanner.hasNextLine()) {
 			userInput = uploadPageScanner.nextLine();
 			if (userInput.equals("1") || userInput.equals("1.")) {
-				System.out.println(DbDataManager.booksDataUpload());
-				UploadDataInterface.uploadPage();
+				System.out.println(DbDataUploadManager.booksDataUpload());
+				CliSettingDataUpload.uploadPage();
 		    	}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
-				System.out.println(DbDataManager.authorsDataUpload());
-				UploadDataInterface.uploadPage();
+				System.out.println(DbDataUploadManager.authorsDataUpload());
+				CliSettingDataUpload.uploadPage();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
-				System.out.println(DbDataManager.publishersDataUpload());
-				UploadDataInterface.uploadPage();
+				System.out.println(DbDataUploadManager.publishersDataUpload());
+				CliSettingDataUpload.uploadPage();
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
-				System.out.println(DbDataManager.genreDataUpload());
-				UploadDataInterface.uploadPage();
+				System.out.println(DbDataUploadManager.genreDataUpload());
+				CliSettingDataUpload.uploadPage();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
-				MainInterface.mainPage();
+				CliMainPage.mainPage();
 				}
 			else {
 				System.out.println("Invalid Selection:");

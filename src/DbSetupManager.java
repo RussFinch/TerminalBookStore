@@ -20,7 +20,7 @@ public class DbSetupManager {
 										+ " qty INT,"
 										+ " PRIMARY KEY (id));";
 		System.out.println("Books table verification " 
-										+ DbConnection.queryDatabase(sqlCreateTableBooks));
+										+ DbInterface.queryDatabase(sqlCreateTableBooks));
 		
 		//SQL to create/verify Publishers database table
 		String sqlCreateTablePublishers = "CREATE TABLE IF NOT EXISTS publishers "
@@ -34,7 +34,7 @@ public class DbSetupManager {
 										+ " address_postcode VARCHAR(8),"
 										+ " PRIMARY KEY (publisher_id));";
 		System.out.println("Publishers table verification " 
-										+ DbConnection.queryDatabase(sqlCreateTablePublishers));
+										+ DbInterface.queryDatabase(sqlCreateTablePublishers));
 		
 		//SQL to create/verify Authors database table
 		String sqlCreateTableAuthors = "CREATE TABLE IF NOT EXISTS authors "
@@ -43,7 +43,7 @@ public class DbSetupManager {
 										+ " author_surname VARCHAR(20),"
 										+ " PRIMARY KEY (author_id));";
 		System.out.println("Authors table verification " 
-										+ DbConnection.queryDatabase(sqlCreateTableAuthors));
+										+ DbInterface.queryDatabase(sqlCreateTableAuthors));
 		
 		//SQL to create/verify genre database table
 		String sqlCreateTableGenre = "CREATE TABLE IF NOT EXISTS genre "
@@ -51,7 +51,7 @@ public class DbSetupManager {
 										+ " genre_name VARCHAR(50),"
 										+ " PRIMARY KEY (genre_id));";
 		System.out.println("Genre table verification " 
-										+ DbConnection.queryDatabase(sqlCreateTableGenre));
+										+ DbInterface.queryDatabase(sqlCreateTableGenre));
 
 		return "\nDatabase Setup/verification complete.";
 	}
