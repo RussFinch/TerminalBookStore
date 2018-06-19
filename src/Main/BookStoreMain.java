@@ -23,6 +23,9 @@ public class BookStoreMain {
 				break;
 				}
 		}
+		
+		System.out.println("Login attempts exceeded.  Program closed.");
+		System.exit(0);
 	}
 	//public scanner to call whenever terminal input required anywhere in program
 	public final static Scanner keyInput = new Scanner(System.in);

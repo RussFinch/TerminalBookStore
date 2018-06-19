@@ -48,7 +48,7 @@ public class CliMainPage {
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {
 				System.out.println("System Quit...");
-				System.exit(0);  								// look at this again later
+				System.exit(0);
 				}
 			else {
 				System.out.println("Invalid Selection:");

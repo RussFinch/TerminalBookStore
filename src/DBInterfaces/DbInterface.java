@@ -1,27 +1,37 @@
 package DBInterfaces;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
+import java.io.IOException;
 import java.sql.*;
-import java.util.Scanner;
+import java.util.Properties;
+
 
 public class DbInterface {
 
-	//public scanner method to call whenever DBLogin details required in program
+	//public properties method to call whenever DBLogin details required in program
 	public final static String DbLogin() throws FileNotFoundException { 
-	
-		String fileScanUser = "";
-		String fileScanPass = "";
-		String fileScanDbUrl = "";
-		String loginFile = "/Users/russellfincham/documents/temp/MySqlLogin.txt";
 		
-		Scanner fileScanner = new Scanner(new FileInputStream(loginFile), "UTF-8");
+		String UserId = "";
+		String Password = "";
+		String DbUrl = "";
 		
-	    fileScanUser = fileScanner.nextLine();
-	    fileScanPass = fileScanner.nextLine();
-	    fileScanDbUrl = fileScanner.nextLine(); 
-	    fileScanner.close();
+		FileInputStream in = new FileInputStream("/Users/russellfincham/documents/temp/MySqlLogin.txt");
+		Properties properties = new Properties();
+		
+		try {
+			properties.load(in);
+			in.close();
+			
+			UserId = properties.getProperty("UserId");
+			Password = properties.getProperty("Password");
+			DbUrl = properties.getProperty("DbUrl");
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+			}
 	    
-	    return (fileScanUser + "," + fileScanPass + "," + fileScanDbUrl);
+	    return (UserId + "," + Password + "," + DbUrl);
 	}
 	
 	//public method used as query interface to the database

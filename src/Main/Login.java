@@ -38,7 +38,7 @@ public class Login {
 			state = "loggedIn";
 			}
 		else {
-			System.out.print(inputUsername + " your username or password is incorrect.\n");
+			System.out.println(inputUsername + " your username or password is incorrect.\n");
 			state = "loggedOut";
 			}
 	return state;
