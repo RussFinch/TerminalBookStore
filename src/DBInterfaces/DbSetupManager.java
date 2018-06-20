@@ -53,6 +53,14 @@ public class DbSetupManager {
 										+ " PRIMARY KEY (genre_id));";
 		System.out.println("Genre table verification " 
 										+ DbInterface.queryDatabase(sqlCreateTableGenre));
+		
+		//SQL to create/verify genre database table
+				String sqlCreateTableUsers = "CREATE TABLE IF NOT EXISTS users "
+												+ "(user_id VARCHAR(255),"
+												+ " user_password VARCHAR(50) NOT NULL,"
+												+ " PRIMARY KEY (user_id));";
+				System.out.println("Users table verification " 
+												+ DbInterface.queryDatabase(sqlCreateTableUsers));
 
 		return "\nDatabase Setup/verification complete.";
 	}

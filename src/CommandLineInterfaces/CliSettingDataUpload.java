@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbDataUploadManager;
+import DBInterfaces.DbDataUploadSettings;
 import Main.BookStoreMain;
 
 public class CliSettingDataUpload {
@@ -19,6 +20,9 @@ public class CliSettingDataUpload {
 		System.out.println("2. Upload Authors");
 		System.out.println("3. Upload Publishers");
 		System.out.println("4. Upload Genre");
+		System.out.println("5. Upload Users");
+		System.out.println();
+		System.out.println("6. Upload Settings");
 		System.out.println();
 		System.out.println("0. Main Page");
 		System.out.println("Please enter selection: ");
@@ -39,6 +43,14 @@ public class CliSettingDataUpload {
 		    	}
 			else if (userInput.equals("4") || userInput.equals("4.")) {
 				System.out.println(DbDataUploadManager.genreDataUpload());
+				CliSettingDataUpload.uploadPage();
+		    	}
+			else if (userInput.equals("5") || userInput.equals("5.")) {
+				System.out.println(DbDataUploadManager.userDataUpload());
+				CliSettingDataUpload.uploadPage();
+		    	}
+			else if (userInput.equals("6") || userInput.equals("6.")) {
+				System.out.println(DbDataUploadSettings.uploadSettings());
 				CliSettingDataUpload.uploadPage();
 		    	}
 			else if (userInput.equals("0") || userInput.equals("0.")) {

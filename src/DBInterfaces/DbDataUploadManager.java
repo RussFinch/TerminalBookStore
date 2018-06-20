@@ -245,7 +245,56 @@ public class DbDataUploadManager {
 	    {
 	        e.printStackTrace();
 	    }
-	    return "Publishers upload complete";
+	    return "Publishers upload complete";	
+	}
+	
+	public static String userDataUpload() throws FileNotFoundException, SQLException {
 		
+		//DB Login variables returned from DbInterface.DbLogin
+		String userName = "";
+		String password = "";
+		String dbUrl = "";
+		
+		//Users table columns
+	    String user_id = "";
+	    String user_password = "";
+	    
+	    PreparedStatement ps = null;
+	    
+	    String loginString = DbInterface.DbLogin();
+		String loginArray[] = loginString.split(",");
+        userName = loginArray[0];
+        password = loginArray[1];
+        dbUrl = loginArray[2];
+
+	    try {
+	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/UsersInput.txt"));
+
+	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
+
+	        String line = null;
+	        while ((line = reader.readLine()) != null) {
+	            String data[] = line.split(",");
+	            user_id = data[0];
+	            user_password = data[1];
+
+	            System.out.println(user_id + "\t *Password*");
+	            String sqlUsersUpload =
+	                    "INSERT INTO users (user_id, user_password) values "
+	                    + "('" + user_id + "', '" + user_password + "');";
+	            ps = conn.prepareStatement(sqlUsersUpload);
+	            ps.executeUpdate();
+	        }
+
+	        reader.close();
+	        conn.close();
+	        ps.close();
+
+	    }
+	    catch (IOException e)
+	    {
+	        e.printStackTrace();
+	    }
+	    return "Users upload complete";
 	}
 }

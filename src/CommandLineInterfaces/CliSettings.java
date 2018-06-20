@@ -16,8 +16,8 @@ public class CliSettings {
 		
 		System.out.println("\n*****  Settings Page *****");
 		System.out.println();
-		System.out.println("1. Database Access  -  Needs completing");
-		System.out.println("2. Build Database");
+		System.out.println("1. Database Access");
+		System.out.println("2. Build Database Schema");
 		System.out.println("3. Upload Data");
 		System.out.println("4. Users  -  Needs Completing");
 		System.out.println();
@@ -31,6 +31,7 @@ public class CliSettings {
 				}
 			else if (userInput.equals("2") || userInput.equals("2.")) {
 				System.out.println(DbSetupManager.dbSetup());
+				CliSettings.setupPage();
 		    	}
 			else if (userInput.equals("3") || userInput.equals("3.")) {
 				CliSettingDataUpload.uploadPage();
