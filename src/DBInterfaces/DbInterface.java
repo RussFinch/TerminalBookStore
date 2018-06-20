@@ -33,7 +33,8 @@ public class DbInterface {
 	    return (UserId + "," + Password + "," + DbUrl);
 	}
 	
-	//public method used as query interface to the database
+	//public method used as query interface to the database 
+	//for (updates, deletions schema config)
 	public static String queryDatabase(String sqlQuery) throws FileNotFoundException {
 
 		String userName = "";
@@ -59,5 +60,39 @@ public class DbInterface {
 				}
 		
 		return "Executed.";
+	}
+	
+	//public method used for settings retrieval
+	public static String querySettings (String sqlQuery) throws FileNotFoundException {
+		
+		String userName = "";
+		String password = "";
+		String dbUrl = "";
+		String settingValue = "";
+	
+		String loginString = DbInterface.DbLogin();
+	
+		String data[] = loginString.split(",");
+		userName = data[0];
+		password = data[1];
+		dbUrl = data[2];
+	
+		try (
+				Connection conn = DriverManager.getConnection(dbUrl, userName, password);
+				Statement stmt = conn.createStatement();
+			
+				) {	
+		
+			ResultSet rset = stmt.executeQuery(sqlQuery);
+			
+			while (rset.next()) {
+				settingValue = rset.getString("value");
+				}
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+			}
+		
+		return settingValue;
 	}
 }

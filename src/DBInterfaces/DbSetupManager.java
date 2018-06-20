@@ -54,13 +54,21 @@ public class DbSetupManager {
 		System.out.println("Genre table verification " 
 										+ DbInterface.queryDatabase(sqlCreateTableGenre));
 		
-		//SQL to create/verify genre database table
+		//SQL to create/verify Users database table
 				String sqlCreateTableUsers = "CREATE TABLE IF NOT EXISTS users "
 												+ "(user_id VARCHAR(255),"
 												+ " user_password VARCHAR(50) NOT NULL,"
 												+ " PRIMARY KEY (user_id));";
 				System.out.println("Users table verification " 
 												+ DbInterface.queryDatabase(sqlCreateTableUsers));
+				
+		//SQL to create/verify Settings database table
+		String sqlCreateTableSettings = "CREATE TABLE IF NOT EXISTS settings "
+										+ "(setting_name VARCHAR(255),"
+										+ " value VARCHAR(255),"
+										+ " PRIMARY KEY (setting_name));";
+		System.out.println("Settings table verification " 
+										+ DbInterface.queryDatabase(sqlCreateTableSettings));
 
 		return "\nDatabase Setup/verification complete.";
 	}

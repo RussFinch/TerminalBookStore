@@ -15,6 +15,10 @@ public class DbDataUploadManager {
 	    String genre_id = "";
 	    String genre_name = "";
 	    
+	    //Location of upload file from system settings
+	    String sqlQuery = "SELECT * FROM settings WHERE setting_name='genreUpload'";
+	    String uploadFile = DbInterface.querySettings(sqlQuery);
+	    
 	    PreparedStatement ps = null;
 	    
 	    String loginString = DbInterface.DbLogin();
@@ -24,7 +28,7 @@ public class DbDataUploadManager {
         dbUrl = loginArray[2];
 
 	    try {
-	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/GenreInput.txt"));
+	        BufferedReader reader = new BufferedReader(new FileReader(uploadFile));
 
 	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 
@@ -67,6 +71,10 @@ public class DbDataUploadManager {
 	    String author_firstname = "";
 	    String author_surname = "";
 	    
+	    //Location of upload file from system settings
+	    String sqlQuery = "SELECT * FROM settings WHERE setting_name='authorsUpload'";
+	    String uploadFile = DbInterface.querySettings(sqlQuery);
+	    
 	    PreparedStatement ps = null;
 	    
 	    String loginString = DbInterface.DbLogin();
@@ -76,7 +84,7 @@ public class DbDataUploadManager {
         dbUrl = loginArray[2];
 
 	    try {
-	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/AuthorInput.txt"));
+	        BufferedReader reader = new BufferedReader(new FileReader(uploadFile));
 
 	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 
@@ -127,6 +135,10 @@ public class DbDataUploadManager {
 	    String edition = "";
 	    String qty = "";
 	    
+	    //Location of upload file from system settings
+	    String sqlQuery = "SELECT * FROM settings WHERE setting_name='booksUpload'";
+	    String uploadFile = DbInterface.querySettings(sqlQuery);
+	    
 	    PreparedStatement ps = null;
 	    
 	    String loginString = DbInterface.DbLogin();
@@ -136,7 +148,7 @@ public class DbDataUploadManager {
         dbUrl = loginArray[2];
 
 	    try {
-	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/BookInput.txt"));
+	        BufferedReader reader = new BufferedReader(new FileReader(uploadFile));
 
 	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 
@@ -198,6 +210,10 @@ public class DbDataUploadManager {
 	    String address_county = "";
 	    String address_postcode = "";
 	    
+	    //Location of upload file from system settings
+	    String sqlQuery = "SELECT * FROM settings WHERE setting_name='publishersUpload'";
+	    String uploadFile = DbInterface.querySettings(sqlQuery);
+	    
 	    PreparedStatement ps = null;
 	    
 	    String loginString = DbInterface.DbLogin();
@@ -207,7 +223,7 @@ public class DbDataUploadManager {
         dbUrl = loginArray[2];
 
 	    try {
-	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/PublisherInput.txt"));
+	        BufferedReader reader = new BufferedReader(new FileReader(uploadFile));
 
 	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 
@@ -259,6 +275,10 @@ public class DbDataUploadManager {
 	    String user_id = "";
 	    String user_password = "";
 	    
+	    //Location of upload file from system settings
+	    String sqlQuery = "SELECT * FROM settings WHERE setting_name='usersUpload'";
+	    String uploadFile = DbInterface.querySettings(sqlQuery);
+	    
 	    PreparedStatement ps = null;
 	    
 	    String loginString = DbInterface.DbLogin();
@@ -268,7 +288,7 @@ public class DbDataUploadManager {
         dbUrl = loginArray[2];
 
 	    try {
-	        BufferedReader reader = new BufferedReader(new FileReader("/Users/russellfincham/documents/temp/UsersInput.txt"));
+	        BufferedReader reader = new BufferedReader(new FileReader(uploadFile));
 
 	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
 
@@ -283,6 +303,60 @@ public class DbDataUploadManager {
 	                    "INSERT INTO users (user_id, user_password) values "
 	                    + "('" + user_id + "', '" + user_password + "');";
 	            ps = conn.prepareStatement(sqlUsersUpload);
+	            ps.executeUpdate();
+	        }
+
+	        reader.close();
+	        conn.close();
+	        ps.close();
+
+	    }
+	    catch (IOException e)
+	    {
+	        e.printStackTrace();
+	    }
+	    return "Users upload complete";
+	}
+	
+	public static String settingsDataUpload() throws FileNotFoundException, SQLException {
+		
+		//DB Login variables returned from DbInterface.DbLogin
+		String userName = "";
+		String password = "";
+		String dbUrl = "";
+		
+		//Users table columns
+	    String setting_name = "";
+	    String value = "";
+	    
+	    //Location of upload file from system settings
+	    String sqlQuery = "SELECT * FROM settings WHERE setting_name='settingsUpload'";
+	    String uploadFile = DbInterface.querySettings(sqlQuery);
+	    
+	    PreparedStatement ps = null;
+	    
+	    String loginString = DbInterface.DbLogin();
+		String loginArray[] = loginString.split(",");
+        userName = loginArray[0];
+        password = loginArray[1];
+        dbUrl = loginArray[2];
+
+	    try {
+	        BufferedReader reader = new BufferedReader(new FileReader(uploadFile));
+
+	        Connection conn = DriverManager.getConnection(dbUrl, userName, password);
+
+	        String line = null;
+	        while ((line = reader.readLine()) != null) {
+	            String data[] = line.split(",");
+	            setting_name = data[0];
+	            value = data[1];
+
+	            System.out.println(setting_name + "\t" + value);
+	            String sqlSettingsUpload =
+	                    "INSERT INTO settings (setting_name, value) values "
+	                    + "('" + setting_name + "', '" + value + "');";
+	            ps = conn.prepareStatement(sqlSettingsUpload);
 	            ps.executeUpdate();
 	        }
 
