@@ -4,14 +4,14 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliPublishers {
 	
 	public static void PublishersPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";
-		Scanner PublishersPageScanner = BookStoreMain.keyInput;
+		Scanner PublishersPageScanner = KeyScanner.keyInput;
 		
 		System.out.println("\n*****  Publishers Page *****");
 		System.out.println();

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbInterface;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliPublisherEnter {
 	
@@ -12,7 +12,7 @@ public class CliPublisherEnter {
 	
 		//  Scanner Variable
 		String userInput = "";
-		Scanner enterPublisherScanner = BookStoreMain.keyInput;
+		Scanner enterPublisherScanner = KeyScanner.keyInput;
 		
 		//SQL Delete Publisher variables
 		String publisher_id = "";

@@ -5,14 +5,14 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbSetupManager;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliSettings {
 
 	public static void setupPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";
-		Scanner setupPageScanner = BookStoreMain.keyInput;
+		Scanner setupPageScanner = KeyScanner.keyInput;
 		
 		System.out.println("\n*****  Settings Page *****");
 		System.out.println();

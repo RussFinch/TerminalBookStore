@@ -4,14 +4,14 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbSearchAuthors;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliSearchAuthor {
 	
 	public static void searchAuthorMenu() throws FileNotFoundException, SQLException {
 				
 		//  Scanner Variable
-		Scanner searchAuthorScanner = BookStoreMain.keyInput;
+		Scanner searchAuthorScanner = KeyScanner.keyInput;
 		String userInput = "";
 				
 		// SQL Search Variables

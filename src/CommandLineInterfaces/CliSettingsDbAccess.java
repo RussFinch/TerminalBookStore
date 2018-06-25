@@ -5,14 +5,14 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
 import DBInterfaces.PropertiesInterface;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliSettingsDbAccess {
 	
 	public static void dbAccessConfig() throws FileNotFoundException, SQLException {
 	
 	String userInput = "";
-	Scanner dbAccessConfigScanner = BookStoreMain.keyInput;
+	Scanner dbAccessConfigScanner = KeyScanner.keyInput;
 	
 	System.out.println("\n*****  Database Access Config Page *****");
 	System.out.println();

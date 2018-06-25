@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbInterface;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliGenreEnter {
 	
@@ -18,7 +18,7 @@ public class CliGenreEnter {
 	String genre_id = "";
 	String genre_name = "";
 	
-	Scanner enterGenreScanner = BookStoreMain.keyInput;
+	Scanner enterGenreScanner = KeyScanner.keyInput;
 	
 	//Interface output and navigation
 	System.out.println("\n*****  Enter Genre *****");

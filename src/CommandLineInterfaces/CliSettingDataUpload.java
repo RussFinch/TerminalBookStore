@@ -4,14 +4,14 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbDataUploadManager;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliSettingDataUpload {
 
 	public static void uploadPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";
-		Scanner uploadPageScanner = BookStoreMain.keyInput;
+		Scanner uploadPageScanner = KeyScanner.keyInput;
 		
 		System.out.println("\n*****  Data Upload Page *****");
 		System.out.println();

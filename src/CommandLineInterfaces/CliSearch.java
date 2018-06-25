@@ -1,9 +1,10 @@
 package CommandLineInterfaces;
+
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliSearch {
 	
@@ -11,7 +12,7 @@ public class CliSearch {
 		
 			//  Scanner Variable
 			String userInput = "";
-			Scanner searchScanner = BookStoreMain.keyInput;
+			Scanner searchScanner = KeyScanner.keyInput;
 						
 			System.out.println("\n*****  Search  *****");
 			System.out.println();
