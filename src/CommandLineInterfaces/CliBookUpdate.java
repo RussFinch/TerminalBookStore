@@ -7,8 +7,22 @@ import java.util.Scanner;
 import DBInterfaces.DbInterface;
 import Main.KeyScanner;
 
+/**
+ * This Command Line Terminal class allows the user to update a book.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class CliBookUpdate {
-	
+	/**
+	 * This Command Line Terminal class allows the user to choose which detail
+	 * to update based on book ID.  It then supplies the correct SQL query to
+	 * DbInterface.queryDatabase for record update from the database.
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void updateBookMenu() throws FileNotFoundException, SQLException {
 		
 		//  Scanner Variable
