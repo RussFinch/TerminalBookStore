@@ -1,4 +1,5 @@
 package CommandLineInterfaces;
+
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -6,8 +7,22 @@ import java.util.Scanner;
 import DBInterfaces.DbSearchPublishers;
 import Main.KeyScanner;
 
+/**
+ * This Command Line Terminal class allows the user to search for a publisher.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class CliSearchPublisher {
-	
+	/**
+	 * This Command Line Terminal class allows the user to search for a publisher.
+	 * It then supplies the correct SQL query to DbSearchPublishers.searchPublishers
+	 * for matching records in the database.
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbSearchPublishers.searchPublishers unable to successfully
+	 * query database
+	 */
 	public static void searchPublisherMenu() throws FileNotFoundException, SQLException {
 		
 		//  Scanner Variable

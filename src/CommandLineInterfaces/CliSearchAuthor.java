@@ -1,4 +1,5 @@
 package CommandLineInterfaces;
+
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -6,8 +7,22 @@ import java.util.Scanner;
 import DBInterfaces.DbSearchAuthors;
 import Main.KeyScanner;
 
+/**
+ * This Command Line Terminal class allows the user to search for an author.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class CliSearchAuthor {
-	
+	/**
+	 * This Command Line Terminal class allows the user to search for an
+	 * author. It then supplies the correct SQL query to DbSearchAuthors.searchAuthors
+	 * to find matching records.
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void searchAuthorMenu() throws FileNotFoundException, SQLException {
 				
 		//  Scanner Variable
