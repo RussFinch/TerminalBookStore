@@ -15,7 +15,15 @@ import Main.KeyScanner;
  */
 
 public class CliSettingsDataUploadSettings {
-	
+	/**
+	 * This Command Line Terminal class allows the user to configure data
+	 * upload preferences. DbInterface.queryDatabase class used to 
+	 * add/update setting
+	 * @throws FileNotFoundException if DbInterface.DbLogin
+	 * unable to access file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void uploadSettingsPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";
