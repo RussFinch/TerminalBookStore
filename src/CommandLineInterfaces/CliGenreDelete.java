@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbInterface;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliGenreDelete {
 	
@@ -13,7 +13,7 @@ public class CliGenreDelete {
 	
 		//  Scanner Variable
 		String userInput = "";
-		Scanner deleteGenreScanner = BookStoreMain.keyInput;
+		Scanner deleteGenreScanner = KeyScanner.keyInput;
 	
 		//  SQL deleteAuthor variables
 		String genre_id = "";

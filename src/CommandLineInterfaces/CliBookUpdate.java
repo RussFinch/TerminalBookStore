@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbInterface;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliBookUpdate {
 	
@@ -13,7 +13,7 @@ public class CliBookUpdate {
 		
 		//  Scanner Variable
 		String userInput = "";
-		Scanner updateBookScanner = BookStoreMain.keyInput;
+		Scanner updateBookScanner = KeyScanner.keyInput;
 		
 		// SQL Update Author Variables
 		String id = "";

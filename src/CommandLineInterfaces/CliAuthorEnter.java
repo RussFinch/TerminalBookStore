@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbInterface;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliAuthorEnter {
 	
@@ -19,7 +19,7 @@ public class CliAuthorEnter {
 	String author_firstname = "";
 	String author_surname = "";
 	
-	Scanner enterAuthorScanner = BookStoreMain.keyInput;
+	Scanner enterAuthorScanner = KeyScanner.keyInput;
 	
 	//Interface output and navigation
 	System.out.println("\n*****  Enter Author *****");

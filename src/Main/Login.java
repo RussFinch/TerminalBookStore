@@ -20,7 +20,7 @@ public class Login {
         userName = data[0];
         password = data[1];
 		
-		Scanner keyboard = BookStoreMain.keyInput;
+		Scanner keyboard = KeyScanner.keyInput;
 	    
 	    System.out.println("Please enter user credentials:");
 	    System.out.println("Username:");

@@ -5,14 +5,14 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbInterface;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliSettingsDataUploadSettings {
 	
 	public static void uploadSettingsPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";
-		Scanner uploadPageScanner = BookStoreMain.keyInput;
+		Scanner uploadPageScanner = KeyScanner.keyInput;
 		
 		System.out.println("\n*****  Upload Settings Page *****");
 		System.out.println();

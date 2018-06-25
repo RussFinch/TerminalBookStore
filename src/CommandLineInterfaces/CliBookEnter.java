@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DBInterfaces.DbInterface;
-import Main.BookStoreMain;
+import Main.KeyScanner;
 
 public class CliBookEnter {
 	
@@ -26,7 +26,7 @@ public class CliBookEnter {
 		String edition = "";
 		String qty = "";
 		
-		Scanner enterBookScanner = BookStoreMain.keyInput;
+		Scanner enterBookScanner = KeyScanner.keyInput;
 		
 		//Interface output and navigation
 		System.out.println("\n*****  Enter Book *****");
