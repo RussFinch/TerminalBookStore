@@ -14,11 +14,13 @@ import Main.KeyScanner;
  * @version 0.1
  * @since 25-06-18
  */
+
 public class CliSettingsDbAccess {
 	/**
 	 * This Command Line Terminal class allows the user to configure database
-	 * user ID and password along with URL for connection. DbInterface.queryDatabase
-	 * class used to update specified file for these settings.
+	 * user ID and password along with URL for connection.
+	 * PropertiesInterface.DbAccessProperties class used to update specified
+	 * file for these settings.
 	 * @throws FileNotFoundException if PropertiesInterface.DbAccessProperties
 	 * unable to access file.
 	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
