@@ -1,4 +1,5 @@
 package CommandLineInterfaces;
+
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -6,8 +7,22 @@ import java.util.Scanner;
 import DBInterfaces.DbSearchGenre;
 import Main.KeyScanner;
 
-public class CliSearchGenre {
+/**
+ * This Command Line Terminal class allows the user to search for a genre.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
 
+public class CliSearchGenre {
+	/**
+	 * This Command Line Terminal class allows the user to search for a genre
+	 * It then supplies the correct SQL query to DbSearchGenre.searchGenre
+	 * for matching records in the database.
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void searchGenreMenu() throws FileNotFoundException, SQLException {
 		
 		//  Scanner Variable

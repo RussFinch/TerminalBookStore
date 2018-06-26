@@ -7,8 +7,22 @@ import java.util.Scanner;
 import DBInterfaces.DbInterface;
 import Main.KeyScanner;
 
+/**
+ * This Command Line Terminal class allows the user to enter a book.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class CliBookEnter {
-	
+	/**
+	 * This Command Line Terminal class allows the user to enter a new book.
+	 * It then supplies the correct SQL query to DbInterface.queryDatabase
+	 * for record addition to the database.
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void enterBookMenu() throws FileNotFoundException, SQLException {
 
 		//  Scanner Variable

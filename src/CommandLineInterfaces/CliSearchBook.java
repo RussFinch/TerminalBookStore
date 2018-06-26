@@ -1,4 +1,5 @@
 package CommandLineInterfaces;
+
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -6,8 +7,22 @@ import java.util.Scanner;
 import DBInterfaces.DbSearchBooks;
 import Main.KeyScanner;
 
-public class CliSearchBook {
+/**
+ * This Command Line Terminal class allows the user to search for a book.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
 
+public class CliSearchBook {
+	/**
+	 * This Command Line Terminal class allows the user to search for a book.
+	 * It then supplies the correct SQL query to DbSearchBooks.searchBooks for
+	 * retrieval of matching records.
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbSearchBooks.searchBooks unable to successfully
+	 * query database
+	 */
 	public static void SearchBookMenu() throws FileNotFoundException, SQLException {
 			
 		//  Scanner Variable

@@ -6,8 +6,21 @@ import java.util.Scanner;
 
 import Main.KeyScanner;
 
+/**
+ * This Command Line Terminal class allows the user to manage publishers.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class CliPublishers {
-	
+	/**
+	 * This Command Line Terminal class allows the user to access
+	 * sub menus for managing publishers in the database.
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void PublishersPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";

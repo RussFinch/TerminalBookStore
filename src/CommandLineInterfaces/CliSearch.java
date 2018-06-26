@@ -6,8 +6,21 @@ import java.util.Scanner;
 
 import Main.KeyScanner;
 
+/**
+ * This Command Line Terminal class allows the user to search the database.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class CliSearch {
-	
+	/**
+	 * This Command Line Terminal class allows the user to access
+	 * sub menus for searching the database.
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void searchMenu() throws FileNotFoundException, SQLException {
 		
 			//  Scanner Variable

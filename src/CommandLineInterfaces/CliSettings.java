@@ -7,8 +7,24 @@ import java.util.Scanner;
 import DBInterfaces.DbSetupManager;
 import Main.KeyScanner;
 
-public class CliSettings {
+/**
+ * This Command Line Terminal class allows setting of system preferences.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
 
+public class CliSettings {
+	/**
+	 * This Command Line Terminal class allows the user to configure system
+	 * settings and preferences. It directs to user to the correct settings page.
+	 * @throws FileNotFoundException if PropertiesInterface.DbAccessProperties
+	 * unable to access file.
+	 * @throws FileNotFoundException if DbInterface.DbLogin
+	 * unable to access file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void setupPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";

@@ -1,4 +1,5 @@
 package CommandLineInterfaces;
+
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -6,8 +7,22 @@ import java.util.Scanner;
 import DBInterfaces.DbDataUploadManager;
 import Main.KeyScanner;
 
-public class CliSettingDataUpload {
+/**
+ * This Command Line Terminal class allows the user to set file locations
+ * for data upload from file.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
 
+public class CliSettingDataUpload {
+	/**
+	 * This Command Line Terminal class allows the user to set file locations
+	 * for data upload from file. It uses preference settings for file locations 
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database.
+	 */
 	public static void uploadPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";

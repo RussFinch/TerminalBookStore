@@ -7,8 +7,22 @@ import java.util.Scanner;
 import DBInterfaces.DbInterface;
 import Main.KeyScanner;
 
+/**
+ * This Command Line Terminal class allows the user to update a genre.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class CliGenreUpdate {
-	
+	/**
+	 * This Command Line Terminal class allows the user to update a genre.
+	 * It then supplies the correct SQL query to DbInterface.queryDatabase
+	 * for record update in the database.
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void updateGenreMenu() throws FileNotFoundException, SQLException {
 		
 		//  Scanner Variable

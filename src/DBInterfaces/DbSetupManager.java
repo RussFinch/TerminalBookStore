@@ -1,8 +1,26 @@
 package DBInterfaces;
+
 import java.io.FileNotFoundException;
 
+/**
+ * This class creates the database schema on system first use.
+ * It 
+ * @author russellfincham
+ * @version 0.1
+ * @since 26-06-18
+ */
+
 public class DbSetupManager {
-	
+	/**
+	 * This method creates the database Schema when the system is
+	 * first used. It is called from System settings once database
+	 * connection parameters have been configured.
+	 * Tables will be created in the system if they do not already exist.
+	 * If they do the table will be skipped.
+	 * @throws FileNotFoundException if data file cannot be accessed by 
+	 * DbInterface.DbLogin.
+	 * @return String returned to calling code indicating setup has completed.
+	 */
 	public static String dbSetup() throws FileNotFoundException {
 		
 		System.out.println("\nDatabase Setup Commencing...");

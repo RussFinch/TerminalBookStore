@@ -6,8 +6,22 @@ import java.util.Scanner;
 
 import Main.KeyScanner;
 
+/**
+ * This Command Line Terminal class is the systems Main terminal page.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class CliMainPage {
-	
+	/**
+	 * This Command Line Terminal class is the system main page.
+	 * It allows users to drop into sub menus for managing
+	 * books, searching, system settings and quitting
+	 * @throws FileNotFoundException if DbInterface.DbLogin unable to access user file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void mainPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";

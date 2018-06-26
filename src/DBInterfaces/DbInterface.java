@@ -6,9 +6,21 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
-public class DbInterface {
+/**
+ * This class manages connections to the database.
+ * @author russellfincham
+ * @version 0.1
+ * @since 26-06-18
+ */
 
-	//public properties method to call whenever DBLogin details required in program
+public class DbInterface {
+	/**
+	 * This method collects database user ID, password and connection url
+	 * from file and is used by all methods that require this information.
+	 * @throws FileNotFoundException if file cannot be accessed.
+	 * @return UserID, Password and Database url returned as String.
+	 */
+
 	public final static String DbLogin() throws FileNotFoundException { 
 		
 		String UserId = "";
@@ -33,8 +45,14 @@ public class DbInterface {
 	    return (UserId + "," + Password + "," + DbUrl);
 	}
 	
-	//public method used as query interface to the database 
-	//for (updates, deletions schema config)
+	/**
+	 * This method is used for all queries that require only a modification
+	 * of data within the database and no data to be returned
+	 * @throws FileNotFoundException if file cannot be accessed by 
+	 * DbInterface.DbLogin().
+	 * @param sqlQuery query to be presented to the database.
+	 * @return String "Executed" to indicate completion of method.
+	 */
 	public static String queryDatabase(String sqlQuery) throws FileNotFoundException {
 
 		String userName = "";
@@ -62,6 +80,14 @@ public class DbInterface {
 		return "Executed.";
 	}
 	
+	/**
+	 * This method is used for all queries that require the value of
+	 * a system setting to be returned.
+	 * @throws FileNotFoundException if file cannot be accessed by 
+	 * DbInterface.DbLogin().
+	 * @param sqlQuery query to be presented to the database.
+	 * @return settingValue.
+	 */
 	//public method used for settings retrieval
 	public static String querySettings (String sqlQuery) throws FileNotFoundException {
 		

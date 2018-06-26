@@ -7,8 +7,23 @@ import java.util.Scanner;
 import DBInterfaces.DbInterface;
 import Main.KeyScanner;
 
+/**
+ * This Command Line Terminal class allows setting of data upload preferences.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class CliSettingsDataUploadSettings {
-	
+	/**
+	 * This Command Line Terminal class allows the user to configure data
+	 * upload preferences. DbInterface.queryDatabase class used to 
+	 * add/update setting
+	 * @throws FileNotFoundException if DbInterface.DbLogin
+	 * unable to access file.
+	 * @throws SQLException if DbInterface.QueryDatabase unable to successfully
+	 * query database
+	 */
 	public static void uploadSettingsPage() throws FileNotFoundException, SQLException {
 		
 		String userInput = "";

@@ -1,10 +1,24 @@
 package Main;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import DBInterfaces.DbInterface;
 
+/**
+ * This class manages the user login process.
+ * @author russellfincham
+ * @version 0.1
+ * @since 25-06-18
+ */
+
 public class Login {
+	/**
+	 * This method matches user input credentials against those specified
+	 * in the file accessed by DbInterface.DbLogin.
+	 * @throws FileNotFoundException if DbInterface.DbLogin missing login file.
+	 * @return state User Login state of loggedOut or loggedIn.
+	 */
 
 	public static String run() throws FileNotFoundException {
 		
@@ -33,8 +47,6 @@ public class Login {
 	    	}
 		if (inputUsername.equals(userName) && inputPass.equals(password)) {
 			System.out.print("\nHello " + inputUsername + "\n");
-//			String DbConSetupString = DbSetupManager.dbLogin(inputUsername, inputPass);
-//			System.out.println(DbConSetupString);
 			state = "loggedIn";
 			}
 		else {
